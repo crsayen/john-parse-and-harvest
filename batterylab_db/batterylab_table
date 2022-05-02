@@ -1,0 +1,21 @@
+USE [Batterylab_FinalTest]
+GO
+
+/****** Object:  Table [dbo].[BATTERYLAB]    Script Date: 5/2/2022 12:55:55 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[BATTERYLAB](
+	[time] [nvarchar](50) NULL,
+	[FILE_NAME] [nvarchar](50) NULL,
+	[PART_NUMBER] [nvarchar](50) NULL,
+	[SERIAL_NUMBER] [nvarchar](50) NULL,
+	[OVERALL_RESULT] [nvarchar](50) NULL,
+	[CAPACITY] [nvarchar](50) NULL
+) ON [PRIMARY]
+GO
+
+
