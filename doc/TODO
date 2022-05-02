@@ -1,0 +1,18 @@
+
+
+move the data to the database:
+
+for both Merlin and Batterylab
+    Read list of field 'FILE_NAME' from remote sql03 table
+    for file in list:
+        move file to '\processed' subdir
+    for file in filesStillPresent:
+        parse
+        Write to database
+
+
+get to run periodically. 
+    calling from tester code?
+    setup as a service?
+        maybe? https://stackoverflow.com/questions/69008155/run-python-script-as-a-windows-service
+

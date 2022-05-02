@@ -1,0 +1,18 @@
+first everything (testsw, python, sql driver) needs to be same bitness 32/64
+
+I installed 32 bit python from python.org,
+but this was probably a mistake
+this code uses pandas and pyodbc, both were painful to install. see
+https://www.lfd.uci.edu/~gohlke/pythonlibs/?msclkid=4e65cf3ec7e511ecbd541d1627a0e840#pandas
+
+anaconda is probably better
+https://docs.anaconda.com/anaconda/install/windows/
+
+Recommend installing vscode.
+https://docs.anaconda.com/anaconda/user-guide/tasks/integration/vscode/
+
+database driver needs to be installed.
+from vscode terminal "py .\list_drivers.py"
+and make sure drivers used are installed. Probably:
+   "SQL Server"
+   "Microsoft Access Driver (*.mdb, *.accdb)"
