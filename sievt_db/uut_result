@@ -1,0 +1,143 @@
+USE [SIEVT_FinalTest]
+GO
+
+/****** Object:  Table [dbo].[UUT_RESULT]    Script Date: 4/26/2022 3:51:45 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[UUT_RESULT](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[STATION_ID] [nvarchar](255) NULL,
+	[BATCH_SERIAL_NUMBER] [nvarchar](255) NULL,
+	[TEST_SOCKET_INDEX] [int] NULL,
+	[UUT_SERIAL_NUMBER] [nvarchar](255) NULL,
+	[USER_LOGIN_NAME] [nvarchar](255) NULL,
+	[START_DATE_TIME] [datetime2](0) NULL,
+	[EXECUTION_TIME] [float] NULL,
+	[UUT_STATUS] [nvarchar](32) NULL,
+	[UUT_ERROR_CODE] [int] NULL,
+	[UUT_ERROR_MESSAGE] [nvarchar](255) NULL,
+	[PART_NUMBER] [nvarchar](255) NULL,
+	[TSR_FILE_NAME] [nvarchar](255) NULL,
+	[TSR_FILE_ID] [nvarchar](64) NULL,
+	[TSR_FILE_CLOSED] [bit] NULL,
+	[SSMA_TimeStamp] [timestamp] NOT NULL,
+ CONSTRAINT [UUT_RESULT$UUT_RESULT_CONSTRAINT] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[UUT_RESULT] ADD  DEFAULT ((0)) FOR [TSR_FILE_CLOSED]
+GO
+
+ALTER TABLE [dbo].[UUT_RESULT]  WITH CHECK ADD  CONSTRAINT [SSMA_CC$UUT_RESULT$BATCH_SERIAL_NUMBER$disallow_zero_length] CHECK  ((len([BATCH_SERIAL_NUMBER])>(0)))
+GO
+
+ALTER TABLE [dbo].[UUT_RESULT] CHECK CONSTRAINT [SSMA_CC$UUT_RESULT$BATCH_SERIAL_NUMBER$disallow_zero_length]
+GO
+
+ALTER TABLE [dbo].[UUT_RESULT]  WITH CHECK ADD  CONSTRAINT [SSMA_CC$UUT_RESULT$PART_NUMBER$disallow_zero_length] CHECK  ((len([PART_NUMBER])>(0)))
+GO
+
+ALTER TABLE [dbo].[UUT_RESULT] CHECK CONSTRAINT [SSMA_CC$UUT_RESULT$PART_NUMBER$disallow_zero_length]
+GO
+
+ALTER TABLE [dbo].[UUT_RESULT]  WITH CHECK ADD  CONSTRAINT [SSMA_CC$UUT_RESULT$STATION_ID$disallow_zero_length] CHECK  ((len([STATION_ID])>(0)))
+GO
+
+ALTER TABLE [dbo].[UUT_RESULT] CHECK CONSTRAINT [SSMA_CC$UUT_RESULT$STATION_ID$disallow_zero_length]
+GO
+
+ALTER TABLE [dbo].[UUT_RESULT]  WITH CHECK ADD  CONSTRAINT [SSMA_CC$UUT_RESULT$TSR_FILE_ID$disallow_zero_length] CHECK  ((len([TSR_FILE_ID])>(0)))
+GO
+
+ALTER TABLE [dbo].[UUT_RESULT] CHECK CONSTRAINT [SSMA_CC$UUT_RESULT$TSR_FILE_ID$disallow_zero_length]
+GO
+
+ALTER TABLE [dbo].[UUT_RESULT]  WITH CHECK ADD  CONSTRAINT [SSMA_CC$UUT_RESULT$TSR_FILE_NAME$disallow_zero_length] CHECK  ((len([TSR_FILE_NAME])>(0)))
+GO
+
+ALTER TABLE [dbo].[UUT_RESULT] CHECK CONSTRAINT [SSMA_CC$UUT_RESULT$TSR_FILE_NAME$disallow_zero_length]
+GO
+
+ALTER TABLE [dbo].[UUT_RESULT]  WITH CHECK ADD  CONSTRAINT [SSMA_CC$UUT_RESULT$USER_LOGIN_NAME$disallow_zero_length] CHECK  ((len([USER_LOGIN_NAME])>(0)))
+GO
+
+ALTER TABLE [dbo].[UUT_RESULT] CHECK CONSTRAINT [SSMA_CC$UUT_RESULT$USER_LOGIN_NAME$disallow_zero_length]
+GO
+
+ALTER TABLE [dbo].[UUT_RESULT]  WITH CHECK ADD  CONSTRAINT [SSMA_CC$UUT_RESULT$UUT_ERROR_MESSAGE$disallow_zero_length] CHECK  ((len([UUT_ERROR_MESSAGE])>(0)))
+GO
+
+ALTER TABLE [dbo].[UUT_RESULT] CHECK CONSTRAINT [SSMA_CC$UUT_RESULT$UUT_ERROR_MESSAGE$disallow_zero_length]
+GO
+
+ALTER TABLE [dbo].[UUT_RESULT]  WITH CHECK ADD  CONSTRAINT [SSMA_CC$UUT_RESULT$UUT_SERIAL_NUMBER$disallow_zero_length] CHECK  ((len([UUT_SERIAL_NUMBER])>(0)))
+GO
+
+ALTER TABLE [dbo].[UUT_RESULT] CHECK CONSTRAINT [SSMA_CC$UUT_RESULT$UUT_SERIAL_NUMBER$disallow_zero_length]
+GO
+
+ALTER TABLE [dbo].[UUT_RESULT]  WITH CHECK ADD  CONSTRAINT [SSMA_CC$UUT_RESULT$UUT_STATUS$disallow_zero_length] CHECK  ((len([UUT_STATUS])>(0)))
+GO
+
+ALTER TABLE [dbo].[UUT_RESULT] CHECK CONSTRAINT [SSMA_CC$UUT_RESULT$UUT_STATUS$disallow_zero_length]
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[UUT_RESULT].[ID]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'UUT_RESULT', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[UUT_RESULT].[STATION_ID]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'UUT_RESULT', @level2type=N'COLUMN',@level2name=N'STATION_ID'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[UUT_RESULT].[BATCH_SERIAL_NUMBER]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'UUT_RESULT', @level2type=N'COLUMN',@level2name=N'BATCH_SERIAL_NUMBER'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[UUT_RESULT].[TEST_SOCKET_INDEX]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'UUT_RESULT', @level2type=N'COLUMN',@level2name=N'TEST_SOCKET_INDEX'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[UUT_RESULT].[UUT_SERIAL_NUMBER]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'UUT_RESULT', @level2type=N'COLUMN',@level2name=N'UUT_SERIAL_NUMBER'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[UUT_RESULT].[USER_LOGIN_NAME]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'UUT_RESULT', @level2type=N'COLUMN',@level2name=N'USER_LOGIN_NAME'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[UUT_RESULT].[START_DATE_TIME]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'UUT_RESULT', @level2type=N'COLUMN',@level2name=N'START_DATE_TIME'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[UUT_RESULT].[EXECUTION_TIME]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'UUT_RESULT', @level2type=N'COLUMN',@level2name=N'EXECUTION_TIME'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[UUT_RESULT].[UUT_STATUS]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'UUT_RESULT', @level2type=N'COLUMN',@level2name=N'UUT_STATUS'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[UUT_RESULT].[UUT_ERROR_CODE]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'UUT_RESULT', @level2type=N'COLUMN',@level2name=N'UUT_ERROR_CODE'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[UUT_RESULT].[UUT_ERROR_MESSAGE]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'UUT_RESULT', @level2type=N'COLUMN',@level2name=N'UUT_ERROR_MESSAGE'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[UUT_RESULT].[PART_NUMBER]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'UUT_RESULT', @level2type=N'COLUMN',@level2name=N'PART_NUMBER'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[UUT_RESULT].[TSR_FILE_NAME]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'UUT_RESULT', @level2type=N'COLUMN',@level2name=N'TSR_FILE_NAME'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[UUT_RESULT].[TSR_FILE_ID]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'UUT_RESULT', @level2type=N'COLUMN',@level2name=N'TSR_FILE_ID'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[UUT_RESULT].[TSR_FILE_CLOSED]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'UUT_RESULT', @level2type=N'COLUMN',@level2name=N'TSR_FILE_CLOSED'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[UUT_RESULT].[UUT_RESULT_CONSTRAINT]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'UUT_RESULT', @level2type=N'CONSTRAINT',@level2name=N'UUT_RESULT$UUT_RESULT_CONSTRAINT'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[UUT_RESULT]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'UUT_RESULT'
+GO
+
+

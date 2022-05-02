@@ -1,0 +1,110 @@
+USE [SIEVT_FinalTest]
+GO
+
+/****** Object:  Table [dbo].[PROP_RESULT]    Script Date: 4/26/2022 3:56:39 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[PROP_RESULT](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[STEP_RESULT] [int] NOT NULL,
+	[PROP_PARENT] [int] NULL,
+	[ORDER_NUMBER] [int] NULL,
+	[NAME] [nvarchar](255) NULL,
+	[PATH] [nvarchar](max) NULL,
+	[CATEGORY] [int] NULL,
+	[TYPE_VALUE] [int] NULL,
+	[TYPE_NAME] [nvarchar](255) NULL,
+	[DISPLAY_FORMAT] [nvarchar](32) NULL,
+	[DATA] [nvarchar](255) NULL,
+	[SSMA_TimeStamp] [timestamp] NOT NULL,
+ CONSTRAINT [PROP_RESULT$PROP_RESULT_CONSTRAINT] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[PROP_RESULT]  WITH CHECK ADD  CONSTRAINT [PROP_RESULT$PROP_RESULT_FK] FOREIGN KEY([STEP_RESULT])
+REFERENCES [dbo].[STEP_RESULT] ([ID])
+GO
+
+ALTER TABLE [dbo].[PROP_RESULT] CHECK CONSTRAINT [PROP_RESULT$PROP_RESULT_FK]
+GO
+
+ALTER TABLE [dbo].[PROP_RESULT]  WITH CHECK ADD  CONSTRAINT [SSMA_CC$PROP_RESULT$DATA$disallow_zero_length] CHECK  ((len([DATA])>(0)))
+GO
+
+ALTER TABLE [dbo].[PROP_RESULT] CHECK CONSTRAINT [SSMA_CC$PROP_RESULT$DATA$disallow_zero_length]
+GO
+
+ALTER TABLE [dbo].[PROP_RESULT]  WITH CHECK ADD  CONSTRAINT [SSMA_CC$PROP_RESULT$DISPLAY_FORMAT$disallow_zero_length] CHECK  ((len([DISPLAY_FORMAT])>(0)))
+GO
+
+ALTER TABLE [dbo].[PROP_RESULT] CHECK CONSTRAINT [SSMA_CC$PROP_RESULT$DISPLAY_FORMAT$disallow_zero_length]
+GO
+
+ALTER TABLE [dbo].[PROP_RESULT]  WITH CHECK ADD  CONSTRAINT [SSMA_CC$PROP_RESULT$NAME$disallow_zero_length] CHECK  ((len([NAME])>(0)))
+GO
+
+ALTER TABLE [dbo].[PROP_RESULT] CHECK CONSTRAINT [SSMA_CC$PROP_RESULT$NAME$disallow_zero_length]
+GO
+
+ALTER TABLE [dbo].[PROP_RESULT]  WITH CHECK ADD  CONSTRAINT [SSMA_CC$PROP_RESULT$PATH$disallow_zero_length] CHECK  ((len([PATH])>(0)))
+GO
+
+ALTER TABLE [dbo].[PROP_RESULT] CHECK CONSTRAINT [SSMA_CC$PROP_RESULT$PATH$disallow_zero_length]
+GO
+
+ALTER TABLE [dbo].[PROP_RESULT]  WITH CHECK ADD  CONSTRAINT [SSMA_CC$PROP_RESULT$TYPE_NAME$disallow_zero_length] CHECK  ((len([TYPE_NAME])>(0)))
+GO
+
+ALTER TABLE [dbo].[PROP_RESULT] CHECK CONSTRAINT [SSMA_CC$PROP_RESULT$TYPE_NAME$disallow_zero_length]
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[PROP_RESULT].[ID]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'PROP_RESULT', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[PROP_RESULT].[STEP_RESULT]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'PROP_RESULT', @level2type=N'COLUMN',@level2name=N'STEP_RESULT'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[PROP_RESULT].[PROP_PARENT]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'PROP_RESULT', @level2type=N'COLUMN',@level2name=N'PROP_PARENT'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[PROP_RESULT].[ORDER_NUMBER]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'PROP_RESULT', @level2type=N'COLUMN',@level2name=N'ORDER_NUMBER'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[PROP_RESULT].[NAME]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'PROP_RESULT', @level2type=N'COLUMN',@level2name=N'NAME'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[PROP_RESULT].[PATH]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'PROP_RESULT', @level2type=N'COLUMN',@level2name=N'PATH'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[PROP_RESULT].[CATEGORY]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'PROP_RESULT', @level2type=N'COLUMN',@level2name=N'CATEGORY'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[PROP_RESULT].[TYPE_VALUE]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'PROP_RESULT', @level2type=N'COLUMN',@level2name=N'TYPE_VALUE'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[PROP_RESULT].[TYPE_NAME]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'PROP_RESULT', @level2type=N'COLUMN',@level2name=N'TYPE_NAME'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[PROP_RESULT].[DISPLAY_FORMAT]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'PROP_RESULT', @level2type=N'COLUMN',@level2name=N'DISPLAY_FORMAT'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[PROP_RESULT].[DATA]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'PROP_RESULT', @level2type=N'COLUMN',@level2name=N'DATA'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[PROP_RESULT].[PROP_RESULT_CONSTRAINT]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'PROP_RESULT', @level2type=N'CONSTRAINT',@level2name=N'PROP_RESULT$PROP_RESULT_CONSTRAINT'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[PROP_RESULT]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'PROP_RESULT'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[PROP_RESULT].[PROP_RESULT_FK]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'PROP_RESULT', @level2type=N'CONSTRAINT',@level2name=N'PROP_RESULT$PROP_RESULT_FK'
+GO
+
+

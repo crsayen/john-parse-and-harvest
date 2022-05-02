@@ -1,0 +1,133 @@
+USE [SIEVT_FinalTest]
+GO
+
+/****** Object:  Table [dbo].[PROP_NUMERICLIMIT]    Script Date: 4/26/2022 3:57:07 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[PROP_NUMERICLIMIT](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[PROP_RESULT] [int] NULL,
+	[COMP_OPERATOR] [nvarchar](32) NULL,
+	[THRESHOLD_TYPE] [nvarchar](32) NULL,
+	[NOMINAL_VALUE] [nvarchar](255) NULL,
+	[UPPER_THRESHOLD] [nvarchar](255) NULL,
+	[LOWER_THRESHOLD] [nvarchar](255) NULL,
+	[HIGH_LIMIT] [nvarchar](255) NULL,
+	[LOW_LIMIT] [nvarchar](255) NULL,
+	[UNITS] [nvarchar](255) NULL,
+	[STATUS] [nvarchar](255) NULL,
+ CONSTRAINT [PROP_NUMERICLIMIT$PROP_NUMERICLIMIT_CONSTRAINT] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[PROP_NUMERICLIMIT]  WITH CHECK ADD  CONSTRAINT [PROP_NUMERICLIMIT$STEP_NUMERICLIMIT2_PROP_RESULT_FK] FOREIGN KEY([PROP_RESULT])
+REFERENCES [dbo].[PROP_RESULT] ([ID])
+GO
+
+ALTER TABLE [dbo].[PROP_NUMERICLIMIT] CHECK CONSTRAINT [PROP_NUMERICLIMIT$STEP_NUMERICLIMIT2_PROP_RESULT_FK]
+GO
+
+ALTER TABLE [dbo].[PROP_NUMERICLIMIT]  WITH CHECK ADD  CONSTRAINT [SSMA_CC$PROP_NUMERICLIMIT$COMP_OPERATOR$disallow_zero_length] CHECK  ((len([COMP_OPERATOR])>(0)))
+GO
+
+ALTER TABLE [dbo].[PROP_NUMERICLIMIT] CHECK CONSTRAINT [SSMA_CC$PROP_NUMERICLIMIT$COMP_OPERATOR$disallow_zero_length]
+GO
+
+ALTER TABLE [dbo].[PROP_NUMERICLIMIT]  WITH CHECK ADD  CONSTRAINT [SSMA_CC$PROP_NUMERICLIMIT$HIGH_LIMIT$disallow_zero_length] CHECK  ((len([HIGH_LIMIT])>(0)))
+GO
+
+ALTER TABLE [dbo].[PROP_NUMERICLIMIT] CHECK CONSTRAINT [SSMA_CC$PROP_NUMERICLIMIT$HIGH_LIMIT$disallow_zero_length]
+GO
+
+ALTER TABLE [dbo].[PROP_NUMERICLIMIT]  WITH CHECK ADD  CONSTRAINT [SSMA_CC$PROP_NUMERICLIMIT$LOW_LIMIT$disallow_zero_length] CHECK  ((len([LOW_LIMIT])>(0)))
+GO
+
+ALTER TABLE [dbo].[PROP_NUMERICLIMIT] CHECK CONSTRAINT [SSMA_CC$PROP_NUMERICLIMIT$LOW_LIMIT$disallow_zero_length]
+GO
+
+ALTER TABLE [dbo].[PROP_NUMERICLIMIT]  WITH CHECK ADD  CONSTRAINT [SSMA_CC$PROP_NUMERICLIMIT$LOWER_THRESHOLD$disallow_zero_length] CHECK  ((len([LOWER_THRESHOLD])>(0)))
+GO
+
+ALTER TABLE [dbo].[PROP_NUMERICLIMIT] CHECK CONSTRAINT [SSMA_CC$PROP_NUMERICLIMIT$LOWER_THRESHOLD$disallow_zero_length]
+GO
+
+ALTER TABLE [dbo].[PROP_NUMERICLIMIT]  WITH CHECK ADD  CONSTRAINT [SSMA_CC$PROP_NUMERICLIMIT$NOMINAL_VALUE$disallow_zero_length] CHECK  ((len([NOMINAL_VALUE])>(0)))
+GO
+
+ALTER TABLE [dbo].[PROP_NUMERICLIMIT] CHECK CONSTRAINT [SSMA_CC$PROP_NUMERICLIMIT$NOMINAL_VALUE$disallow_zero_length]
+GO
+
+ALTER TABLE [dbo].[PROP_NUMERICLIMIT]  WITH CHECK ADD  CONSTRAINT [SSMA_CC$PROP_NUMERICLIMIT$STATUS$disallow_zero_length] CHECK  ((len([STATUS])>(0)))
+GO
+
+ALTER TABLE [dbo].[PROP_NUMERICLIMIT] CHECK CONSTRAINT [SSMA_CC$PROP_NUMERICLIMIT$STATUS$disallow_zero_length]
+GO
+
+ALTER TABLE [dbo].[PROP_NUMERICLIMIT]  WITH CHECK ADD  CONSTRAINT [SSMA_CC$PROP_NUMERICLIMIT$THRESHOLD_TYPE$disallow_zero_length] CHECK  ((len([THRESHOLD_TYPE])>(0)))
+GO
+
+ALTER TABLE [dbo].[PROP_NUMERICLIMIT] CHECK CONSTRAINT [SSMA_CC$PROP_NUMERICLIMIT$THRESHOLD_TYPE$disallow_zero_length]
+GO
+
+ALTER TABLE [dbo].[PROP_NUMERICLIMIT]  WITH CHECK ADD  CONSTRAINT [SSMA_CC$PROP_NUMERICLIMIT$UNITS$disallow_zero_length] CHECK  ((len([UNITS])>(0)))
+GO
+
+ALTER TABLE [dbo].[PROP_NUMERICLIMIT] CHECK CONSTRAINT [SSMA_CC$PROP_NUMERICLIMIT$UNITS$disallow_zero_length]
+GO
+
+ALTER TABLE [dbo].[PROP_NUMERICLIMIT]  WITH CHECK ADD  CONSTRAINT [SSMA_CC$PROP_NUMERICLIMIT$UPPER_THRESHOLD$disallow_zero_length] CHECK  ((len([UPPER_THRESHOLD])>(0)))
+GO
+
+ALTER TABLE [dbo].[PROP_NUMERICLIMIT] CHECK CONSTRAINT [SSMA_CC$PROP_NUMERICLIMIT$UPPER_THRESHOLD$disallow_zero_length]
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[PROP_NUMERICLIMIT].[ID]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'PROP_NUMERICLIMIT', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[PROP_NUMERICLIMIT].[PROP_RESULT]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'PROP_NUMERICLIMIT', @level2type=N'COLUMN',@level2name=N'PROP_RESULT'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[PROP_NUMERICLIMIT].[COMP_OPERATOR]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'PROP_NUMERICLIMIT', @level2type=N'COLUMN',@level2name=N'COMP_OPERATOR'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[PROP_NUMERICLIMIT].[THRESHOLD_TYPE]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'PROP_NUMERICLIMIT', @level2type=N'COLUMN',@level2name=N'THRESHOLD_TYPE'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[PROP_NUMERICLIMIT].[NOMINAL_VALUE]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'PROP_NUMERICLIMIT', @level2type=N'COLUMN',@level2name=N'NOMINAL_VALUE'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[PROP_NUMERICLIMIT].[UPPER_THRESHOLD]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'PROP_NUMERICLIMIT', @level2type=N'COLUMN',@level2name=N'UPPER_THRESHOLD'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[PROP_NUMERICLIMIT].[LOWER_THRESHOLD]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'PROP_NUMERICLIMIT', @level2type=N'COLUMN',@level2name=N'LOWER_THRESHOLD'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[PROP_NUMERICLIMIT].[HIGH_LIMIT]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'PROP_NUMERICLIMIT', @level2type=N'COLUMN',@level2name=N'HIGH_LIMIT'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[PROP_NUMERICLIMIT].[LOW_LIMIT]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'PROP_NUMERICLIMIT', @level2type=N'COLUMN',@level2name=N'LOW_LIMIT'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[PROP_NUMERICLIMIT].[UNITS]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'PROP_NUMERICLIMIT', @level2type=N'COLUMN',@level2name=N'UNITS'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[PROP_NUMERICLIMIT].[STATUS]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'PROP_NUMERICLIMIT', @level2type=N'COLUMN',@level2name=N'STATUS'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[PROP_NUMERICLIMIT].[PROP_NUMERICLIMIT_CONSTRAINT]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'PROP_NUMERICLIMIT', @level2type=N'CONSTRAINT',@level2name=N'PROP_NUMERICLIMIT$PROP_NUMERICLIMIT_CONSTRAINT'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[PROP_NUMERICLIMIT]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'PROP_NUMERICLIMIT'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[PROP_NUMERICLIMIT].[STEP_NUMERICLIMIT2_PROP_RESULT_FK]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'PROP_NUMERICLIMIT', @level2type=N'CONSTRAINT',@level2name=N'PROP_NUMERICLIMIT$STEP_NUMERICLIMIT2_PROP_RESULT_FK'
+GO
+
+

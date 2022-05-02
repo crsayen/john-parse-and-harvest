@@ -1,0 +1,64 @@
+USE [SIEVT_FinalTest]
+GO
+
+/****** Object:  Table [dbo].[STEP_SEQCALL]    Script Date: 4/26/2022 3:55:08 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[STEP_SEQCALL](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[STEP_RESULT] [int] NOT NULL,
+	[SEQUENCE_NAME] [nvarchar](255) NULL,
+	[SEQUENCE_FILE_PATH] [nvarchar](max) NULL,
+	[SSMA_TimeStamp] [timestamp] NOT NULL,
+ CONSTRAINT [STEP_SEQCALL$STEP_SEQCALL_CONSTRAINT] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[STEP_SEQCALL]  WITH CHECK ADD  CONSTRAINT [STEP_SEQCALL$STEP_SEQCALL_FK] FOREIGN KEY([STEP_RESULT])
+REFERENCES [dbo].[STEP_RESULT] ([ID])
+GO
+
+ALTER TABLE [dbo].[STEP_SEQCALL] CHECK CONSTRAINT [STEP_SEQCALL$STEP_SEQCALL_FK]
+GO
+
+ALTER TABLE [dbo].[STEP_SEQCALL]  WITH CHECK ADD  CONSTRAINT [SSMA_CC$STEP_SEQCALL$SEQUENCE_FILE_PATH$disallow_zero_length] CHECK  ((len([SEQUENCE_FILE_PATH])>(0)))
+GO
+
+ALTER TABLE [dbo].[STEP_SEQCALL] CHECK CONSTRAINT [SSMA_CC$STEP_SEQCALL$SEQUENCE_FILE_PATH$disallow_zero_length]
+GO
+
+ALTER TABLE [dbo].[STEP_SEQCALL]  WITH CHECK ADD  CONSTRAINT [SSMA_CC$STEP_SEQCALL$SEQUENCE_NAME$disallow_zero_length] CHECK  ((len([SEQUENCE_NAME])>(0)))
+GO
+
+ALTER TABLE [dbo].[STEP_SEQCALL] CHECK CONSTRAINT [SSMA_CC$STEP_SEQCALL$SEQUENCE_NAME$disallow_zero_length]
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[STEP_SEQCALL].[ID]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'STEP_SEQCALL', @level2type=N'COLUMN',@level2name=N'ID'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[STEP_SEQCALL].[STEP_RESULT]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'STEP_SEQCALL', @level2type=N'COLUMN',@level2name=N'STEP_RESULT'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[STEP_SEQCALL].[SEQUENCE_NAME]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'STEP_SEQCALL', @level2type=N'COLUMN',@level2name=N'SEQUENCE_NAME'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[STEP_SEQCALL].[SEQUENCE_FILE_PATH]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'STEP_SEQCALL', @level2type=N'COLUMN',@level2name=N'SEQUENCE_FILE_PATH'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[STEP_SEQCALL].[STEP_SEQCALL_CONSTRAINT]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'STEP_SEQCALL', @level2type=N'CONSTRAINT',@level2name=N'STEP_SEQCALL$STEP_SEQCALL_CONSTRAINT'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[STEP_SEQCALL]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'STEP_SEQCALL'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_SSMA_SOURCE', @value=N'tsr_pruned.[STEP_SEQCALL].[STEP_SEQCALL_FK]' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'STEP_SEQCALL', @level2type=N'CONSTRAINT',@level2name=N'STEP_SEQCALL$STEP_SEQCALL_FK'
+GO
+
+
