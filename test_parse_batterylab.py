@@ -1,6 +1,6 @@
 
-import pytest
-from parse_batterylab import parse_batterylab
+# import pytest
+from parse_batterylab_report import parse_batterylab
 
 
 def test_parse_batterylab_file():

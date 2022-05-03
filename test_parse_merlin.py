@@ -1,6 +1,6 @@
 
-import pytest
-from parse_merlin import parse_merlin
+# import pytest
+from parse_merlin_report import parse_merlin
 
 
 def test_parse_merlin_file():

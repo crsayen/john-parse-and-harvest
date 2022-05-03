@@ -16,3 +16,11 @@ get to run periodically.
     setup as a service?
         maybe? https://stackoverflow.com/questions/69008155/run-python-script-as-a-windows-service
 
+
+
+merlin root directories for logs
+C:\PTM820eSystem\Runtime\Toyota Prius Battery_Gen2\Test Sequence Logs
+C:\PTM820eSystem\Runtime\Toyota Prius Battery_Gen3\Test Sequence Logs
+
+batterylab root directory for logs
+M:\Battery Test System\Reports

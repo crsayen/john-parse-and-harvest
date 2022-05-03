@@ -2,6 +2,7 @@ from cmath import nan
 import pandas as pd
 
 def parse_merlin(dName='doc/examples/',fName='BP22091002_-220331-125402.rtf'):
+    print("parse_merlin", dName,fName)
     # d = {'time':[nan],'file':["None"],'PART_NUMBER':['None'],'SERIAL_NUMBER':['None'],'OVERALL_RESULT':['None']}
     df = pd.DataFrame(columns=['time','FILE_NAME','PART_NUMBER','SERIAL_NUMBER','OVERALL_RESULT'])
     df.loc[0]=['',fName,'','','']
