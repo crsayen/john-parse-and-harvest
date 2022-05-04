@@ -1,4 +1,4 @@
-import pandas
+import pandas as pd
 import os
 import shutil
 from db_connect import read_table,connect_to_db
@@ -50,11 +50,5 @@ if __name__ == "__main__":
     starttime = time.perf_counter()
     print('start harvest')
     harvest_merlin()
-    # for root, dirs, files in os.walk(CONFIG.report_folder_roots[0], topdown=False):
-    #     for name in files:
-    #         print(root,name)
-    #         # print(os.path.join(root, name))
-    #     for name in dirs:
-    #         print(root,name)
-    #         # print(os.path.join(root, name))
+
     print('end harvest', time.perf_counter()-starttime)
