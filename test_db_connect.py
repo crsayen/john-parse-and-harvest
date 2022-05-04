@@ -1,22 +1,6 @@
 import pandas as pd
-import pyodbc 
-
-def read_table(table,connection,datefield=None):
-    sql = f'SELECT * FROM {table}'
-    return pd.read_sql(sql,connection,parse_dates=datefield)
-
-def connect_to_db(server,db):
-    driver = '{SQL Server}'
-    conn_str = (f'Driver={driver};'
-            f'Server={server};' 
-            f'Uid=teststand;Pwd=teststand;'
-            'Trusted_Connection=yes;'
-           f'Database={db};')
-    print(conn_str)
-    conn = pyodbc.connect(conn_str)
-    return conn
-
-
+# import pyodbc 
+from db_connect import connect_to_db,read_table
 
 
 def test_read_from_batt_db():

@@ -1,9 +1,10 @@
 import pandas
 import os
 import shutil
-from test_db_connect import read_table,connect_to_db
+from db_connect import read_table,connect_to_db
 from parse_merlin_report import parse_merlin
 import CONFIG
+import time
 
 def harvest_merlin():
 
@@ -17,12 +18,16 @@ def harvest_merlin():
             files = os.listdir(report_folder_root + "\\" + report_folder)
             for file in files:
                 already_in_db = (file in data_from_db.FILE_NAME.values)
-                with open(report_folder_root + "\\" + report_folder + "\\" + file, encoding='latin-1') as f:
-                    s = f.read(600)
-                is_report_file = s.find('START OF TEST') > 0
+                is_report_file = False
+                if already_in_db == False:
+                    with open(report_folder_root + "\\" + report_folder + "\\" + file, encoding='latin-1') as f:
+                       s = f.read(600)
+                    is_report_file = s.find('START OF TEST') > 0
+                else:
+                    is_report_file = True    
                 print(f'{file=},{already_in_db=},{is_report_file=}')
                 if already_in_db and is_report_file:
-                    #mark so we don't try next time?
+                    #move or mark so we don't try next time?
                     pass
                 elif is_report_file:
                     data_to_db = parse_merlin(report_folder_root + report_folder + "\\",file)
@@ -42,5 +47,14 @@ def harvest_merlin():
            
 
 if __name__ == "__main__":
-    print('start')
+    starttime = time.perf_counter()
+    print('start harvest')
     harvest_merlin()
+    # for root, dirs, files in os.walk(CONFIG.report_folder_roots[0], topdown=False):
+    #     for name in files:
+    #         print(root,name)
+    #         # print(os.path.join(root, name))
+    #     for name in dirs:
+    #         print(root,name)
+    #         # print(os.path.join(root, name))
+    print('end harvest', time.perf_counter()-starttime)
