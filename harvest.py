@@ -37,10 +37,11 @@ def harvest_merlin():
                     for _, row in data_to_db.iterrows():
                         sql=f"""
                         INSERT INTO {CONFIG.table}
-                        (time,FILE_NAME,PART_NUMBER,SERIAL_NUMBER,OVERALL_RESULT)
+                        (DateTimeStamp,FILE_NAME,PART_NUMBER,SERIAL_NUMBER,OVERALL_RESULT)
                         VALUES (?,?,?,?,?)
                         """
-                        cursor.execute(sql, row.time,row.FILE_NAME, row.PART_NUMBER, row.SERIAL_NUMBER,row.OVERALL_RESULT)
+                        cursor = cursor.execute(sql, row.DateTimeStamp,row.FILE_NAME, row.PART_NUMBER, row.SERIAL_NUMBER,row.OVERALL_RESULT)
+                        print(cursor.rowcount)
                     conn.commit()            
                     cursor.close()
     conn.close()
@@ -52,3 +53,5 @@ if __name__ == "__main__":
     harvest_merlin()
 
     print('end harvest', time.perf_counter()-starttime)
+    
+    

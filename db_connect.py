@@ -2,7 +2,7 @@ import pandas as pd
 import pyodbc 
 import CONFIG
 
-def read_table(table,connection,datefield=None):
+def read_table(table,connection,datefield="DateTimeStamp"):
     sql = f'SELECT * FROM {table}'
     return pd.read_sql(sql,connection,parse_dates=datefield)
 

@@ -1,7 +1,7 @@
 USE [Batterylab_FinalTest]
 GO
 
-/****** Object:  Table [dbo].[MERLIN]    Script Date: 5/2/2022 12:57:06 PM ******/
+/****** Object:  Table [dbo].[MERLIN]    Script Date: 5/4/2022 3:45:00 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -9,7 +9,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TABLE [dbo].[MERLIN](
-	[time] [nvarchar](50) NULL,
+	[DateTimeStamp] [datetime] NULL,
 	[FILE_NAME] [nvarchar](50) NULL,
 	[PART_NUMBER] [nvarchar](50) NULL,
 	[SERIAL_NUMBER] [nvarchar](50) NULL,

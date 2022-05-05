@@ -3,12 +3,15 @@
 move the data to the database:
 
 for both Merlin and Batterylab
-    Read list of field 'FILE_NAME' from remote sql03 table
-    for file in list:
-        move file to '\processed' subdir
-    for file in filesStillPresent:
-        parse
-        Write to database
+    somehow keep track of previous processing
+        store file list to csv?
+        or rename files to something we ignore?
+    for files not marked as not_a_log_file or already_in_db:
+        Read db field 'FILE_NAME' to see if already stored:
+            mark as already_in_db
+        else:
+            parse
+            Write to database
 
 
 get to run periodically. 
@@ -18,9 +21,22 @@ get to run periodically.
 
 
 
+where to look for log files:
+
 merlin root directories for logs
 C:\PTM820eSystem\Runtime\Toyota Prius Battery_Gen2\Test Sequence Logs
 C:\PTM820eSystem\Runtime\Toyota Prius Battery_Gen3\Test Sequence Logs
 
 batterylab root directory for logs
 M:\Battery Test System\Reports
+
+
+how to make processing fast:
+
+with a large number of files (maybe >10000) we will have to do 
+something to reduce processing time.
+Best, i think, is using stuff i've tried in 
+try_keeping_file_list.py
+using os.walk, read_csv, to_csv, and some logic to reduce to 
+a small number of files to think about each time.
+iterating thru directory listings will be slow.

@@ -1,7 +1,7 @@
 USE [Batterylab_FinalTest]
 GO
 
-/****** Object:  Table [dbo].[BATTERYLAB]    Script Date: 5/2/2022 12:55:55 PM ******/
+/****** Object:  Table [dbo].[BATTERYLAB]    Script Date: 5/4/2022 3:43:49 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -9,7 +9,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TABLE [dbo].[BATTERYLAB](
-	[time] [nvarchar](50) NULL,
+	[DateTimeStamp] [datetime] NULL,
 	[FILE_NAME] [nvarchar](50) NULL,
 	[PART_NUMBER] [nvarchar](50) NULL,
 	[SERIAL_NUMBER] [nvarchar](50) NULL,
@@ -17,5 +17,4 @@ CREATE TABLE [dbo].[BATTERYLAB](
 	[CAPACITY] [nvarchar](50) NULL
 ) ON [PRIMARY]
 GO
-
 
