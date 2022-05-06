@@ -1,7 +1,10 @@
-machine = 'merlin'
-# machine = 'batterylab'
+import logging
+# machine = 'merlin'
+machine = 'batterylab'
 local = True
 
+logging.basicConfig(filename='harvest.log',level=logging.DEBUG,
+                    format='%(asctime)s %(message)s', datefmt="%m/%d/%Y %H:%M:%S")
 
 if machine == 'merlin':
     server = "dt-sql03"
@@ -16,7 +19,13 @@ if machine == 'merlin':
         Trusted_ConnectionStr = 'Trusted_Connection=yes;'
 
 else:
-    server = "JOHNLAPTOP\SQLEXPRESS"
-    # server = "dt-sql03"
-    db = "batterylab_finaltest"        
+    # server = "JOHNLAPTOP\SQLEXPRESS"
+    server = "dt-sql03"
+    db = "batterylab_finaltest"  
+    table = "BATTERYLAB"      
+    Trusted_ConnectionStr = ''
     report_folder_roots = []
+    if local:
+        server = "JOHNLAPTOP\SQLEXPRESS"
+        report_folder_roots = ['C:\\work\\pyHarvest\\reports_batterylab']
+        Trusted_ConnectionStr = 'Trusted_Connection=yes;'

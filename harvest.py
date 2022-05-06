@@ -3,8 +3,13 @@ import os
 import shutil
 from db_connect import read_table,connect_to_db
 from parse_merlin_report import parse_merlin
+from parse_batterylab_report import parse_batterylab
 import CONFIG
 import time
+import itertools
+
+
+
 
 def harvest_merlin():
 
