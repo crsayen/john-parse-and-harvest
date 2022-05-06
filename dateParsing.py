@@ -8,6 +8,7 @@ def battlab_date_from_filename(name):
     return d 
 
 def parse_date_string(s):
+    s = s.replace("<H3>","").replace("</H3>","")
     p = re.compile(r"\d{1,2}[\/]\d{1,2}[\/]\d{4}[ ]\d{1,2}[:]\d{1,2}")
     m = p.search(s)
     if m is None:

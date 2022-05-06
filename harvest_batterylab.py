@@ -29,7 +29,6 @@ def files_in_folder(root_dir):
 
 def harvest_batterylab():
     logging.info("harvest_batterylab started")
-    1//0
     conn = connect_to_db(CONFIG.server,CONFIG.db)
     data_from_db = read_table(CONFIG.table,conn)
     files_in_db = data_from_db.FILE_NAME.values
@@ -44,7 +43,7 @@ def harvest_batterylab():
             logging.info(f'add file to csv {f}')
             new_to_file_list = pd.DataFrame([[f,True,True]],columns=['file','isReport','inDb'])
             df_files_csv = pd.concat([df_files_csv,new_to_file_list])
-            df_files_csv.to_csv('file_list.csv')
+            df_files_csv.to_csv('file_list.csv',index=False)
         else:
             #file not in csv, nor db, add to db
             logging.info(f'add record to db {f}')
@@ -72,5 +71,5 @@ if __name__ == "__main__":
         harvest_batterylab()
     except BaseException as err:
         logging.critical(f"Unexpected {err=}, {type(err)=}")
-        
+        raise
     print('end harvest', time.perf_counter()-starttime)
