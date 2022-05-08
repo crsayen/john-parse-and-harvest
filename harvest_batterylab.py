@@ -3,7 +3,7 @@ import os
 import shutil
 from db_connect import read_table,connect_to_db
 from parse_batterylab_report import parse_batterylab
-import CONFIG
+import CONFIG_batterylab as CONFIG
 import time
 import itertools
 import logging
@@ -29,7 +29,7 @@ def files_in_folder(root_dir):
 
 def harvest_batterylab():
     logging.info("harvest_batterylab started")
-    conn = connect_to_db(CONFIG.server,CONFIG.db)
+    conn = connect_to_db(CONFIG)
     data_from_db = read_table(CONFIG.table,conn)
     files_in_db = data_from_db.FILE_NAME.values
     df_files_csv = files_in_csv() 

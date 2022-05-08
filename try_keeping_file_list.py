@@ -3,7 +3,7 @@ import os
 import shutil
 from db_connect import read_table,connect_to_db
 from parse_merlin_report import parse_merlin
-import CONFIG
+import CONFIG_batterylab
 import time
 import itertools
 

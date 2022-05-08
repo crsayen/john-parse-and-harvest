@@ -20,9 +20,10 @@ def parse_batterylab(dName='doc/examples/',fName='141MIM04162G_4_26_20222_28_48 
                 df.at[0,'DateTimeStamp'] = dt
                 print(df)
                   
-        s = 'PART NUMBER:'
+        s = 'Battery Module :'
         if (loc:=line.find(s)) >=0:
             pn = line[loc + len(s) + 1:]
+            pn = pn.replace("</H3>","").replace("</TH>","")
             print(f'{pn=}')
             df.at[0,'PART_NUMBER'] = pn
             

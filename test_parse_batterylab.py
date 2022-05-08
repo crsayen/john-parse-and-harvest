@@ -18,7 +18,7 @@ def test_parse_batterylab_file():
 
 def test_parse_batterylab_part():
     df = parse_batterylab('doc/examples/','141MIM04162G_4_26_20222_28_48 PM.html')
-    assert df.at[0,'PART_NUMBER'] == ''
+    assert df.at[0,'PART_NUMBER'] == 'Prius NiMH'
     
 def test_parse_batterylab_serial():
     df = parse_batterylab('doc/examples/','141MIM04162G_4_26_20222_28_48 PM.html')

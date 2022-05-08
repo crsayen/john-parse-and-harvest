@@ -1,14 +1,16 @@
 import pandas as pd
 # import pyodbc 
 from db_connect import connect_to_db,read_table
-
+import CONFIG_batterylab
 
 def test_read_from_batt_db():
     # server = 'dt-sql03'
-    server = 'JOHNLAPTOP\SQLEXPRESS'
-    db = 'batterylab_finaltest'
+
     # db = 'sievt_finaltest'
-    conn = connect_to_db(server,db)
+    CONFIG_batterylab.server = 'JOHNLAPTOP\SQLEXPRESS'
+    CONFIG_batterylab.db = 'batterylab_finaltest'
+    CONFIG_batterylab.Trusted_ConnectionStr = 'Trusted_Connection=yes;'
+    conn = connect_to_db(CONFIG_batterylab)
     table = "BATTERYLAB"
     df = read_table(table,conn)
     conn.close
@@ -21,10 +23,11 @@ def test_read_from_batt_db():
 
 def test_read_from_batt_db_merlin():
     # server = 'dt-sql03'
-    server = 'JOHNLAPTOP\SQLEXPRESS'
-    db = 'batterylab_finaltest'
+    CONFIG_batterylab.server = 'JOHNLAPTOP\SQLEXPRESS'
+    CONFIG_batterylab.db = 'batterylab_finaltest'
+    CONFIG_batterylab.Trusted_ConnectionStr = 'Trusted_Connection=yes;'
     # db = 'sievt_finaltest'
-    conn = connect_to_db(server,db)
+    conn = connect_to_db(CONFIG_batterylab)
     table = "MERLIN"
     df = read_table(table,conn)
     conn.close
