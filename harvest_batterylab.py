@@ -23,9 +23,9 @@ def files_in_folder(root_dir):
         walk_files.append(files)
         for name in files:
             count += 1
-    flat = list(itertools.chain.from_iterable(walk_files))
-    print(f'{len(flat)=}')
-    return flat
+    flat_list_of_report_files = list(itertools.chain.from_iterable(walk_files))
+    print(f'{len(flat_list_of_report_files)=}')
+    return flat_list_of_report_files
 
 def harvest_batterylab():
     logging.info("harvest_batterylab started")
@@ -66,7 +66,7 @@ def harvest_batterylab():
 
 if __name__ == "__main__":
     starttime = time.perf_counter()
-    print('start harvest')
+    print(f'start harvest of report data to {CONFIG.server}')
     try:
         harvest_batterylab()
     except BaseException as err:

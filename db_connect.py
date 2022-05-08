@@ -12,6 +12,6 @@ def connect_to_db(CONFIG):
             f'Uid=teststand;Pwd=teststand;'
             f'{CONFIG.Trusted_ConnectionStr}'
             f'Database={CONFIG.db};')
-    print(conn_str)
+    # print(conn_str)
     conn = pyodbc.connect(conn_str)
     return conn
