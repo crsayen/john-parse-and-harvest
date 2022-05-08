@@ -1,12 +1,16 @@
 first everything (testsw, python, sql driver) needs to be same bitness 32/64
 
+On Merlin:
 I installed 32 bit python from python.org,
 but this was probably a mistake
 this code uses pandas and pyodbc, both were painful to install. see
 https://www.lfd.uci.edu/~gohlke/pythonlibs/?msclkid=4e65cf3ec7e511ecbd541d1627a0e840#pandas
 
-anaconda is probably better
+On batterylab:
+I installed anaconda. This is better as all libraries come with.
 https://docs.anaconda.com/anaconda/install/windows/
+batterylab is 64bits.
+PowerShell doesn't seem to play nice with anaconda. Cmd works.
 
 Recommend installing vscode.
 https://docs.anaconda.com/anaconda/user-guide/tasks/integration/vscode/
