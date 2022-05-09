@@ -31,7 +31,7 @@ def harvest_merlin():
                     is_report_file = s.find('START OF TEST') > 0
                 else:
                     is_report_file = True    
-                print(f'{file=},{already_in_db=},{is_report_file=}')
+                # print(f'{file=},{already_in_db=},{is_report_file=}')
                 if already_in_db and is_report_file:
                     #move or mark so we don't try next time?
                     pass
@@ -56,7 +56,7 @@ def harvest_merlin():
 
 if __name__ == "__main__":
     starttime = time.perf_counter()
-    print('start harvest')
+    print(f'start harvest report data to {CONFIG.server}')
     harvest_merlin()
 
     print('end harvest', time.perf_counter()-starttime)
