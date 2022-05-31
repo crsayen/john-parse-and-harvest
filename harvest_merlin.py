@@ -54,7 +54,11 @@ def harvest_merlin():
                                             merlin_report.PART_NUMBER,
                                             merlin_report.SERIAL_NUMBER,
                                             merlin_report.OVERALL_RESULT)
-                    print(cursor.rowcount)
+                    # print(cursor.rowcount)
+                    logging.info(f'{sql=}')
+                    logging.info(f'{merlin_report=}')
+                    # cursor = cursor.execute(sql, row.DateTimeStamp,row.FILE_NAME, row.PART_NUMBER, row.SERIAL_NUMBER,row.OVERALL_RESULT)
+                    logging.info(f'{cursor.rowcount=}')                   
                     conn.commit()            
                     cursor.close()
     conn.close()
