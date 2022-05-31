@@ -31,6 +31,7 @@ def harvest_batterylab():
     logging.info("harvest_batterylab started")
     conn = connect_to_db(CONFIG)
     data_from_db = read_table(CONFIG.table,conn)
+    data_from_db.to_csv('batterylab.csv')
     files_in_db = data_from_db.FILE_NAME.values
     df_files_csv = files_in_csv() 
     list_files_csv = df_files_csv.file.values
@@ -47,18 +48,23 @@ def harvest_batterylab():
         else:
             #file not in csv, nor db, add to db
             logging.info(f'add record to db {f}')
-            data_to_db = parse_batterylab(CONFIG.report_folder_roots[0] + "\\",f) 
-            print(f'{data_to_db=}') 
+            bl_report = parse_batterylab(CONFIG.report_folder_roots[0] + "\\",f) 
+            # print(f'{bl_report=}') 
             cursor = conn.cursor()
-            # Insert Dataframe into SQL Server:
-            for _, row in data_to_db.iterrows():
-                sql=f"""
+            # Insert into SQL Server:
+            sql=f"""
                 INSERT INTO {CONFIG.table}
                 (DateTimeStamp,FILE_NAME,PART_NUMBER,SERIAL_NUMBER,OVERALL_RESULT,CAPACITY)
                 VALUES (?,?,?,?,?,?)
                 """
-                cursor = cursor.execute(sql, row.DateTimeStamp,row.FILE_NAME, row.PART_NUMBER, row.SERIAL_NUMBER,row.OVERALL_RESULT,row.CAPACITY)
-                print(cursor.rowcount)
+            cursor = cursor.execute(sql, 
+                                    bl_report.DateTimeStamp,
+                                    bl_report.FILE_NAME, 
+                                    bl_report.PART_NUMBER, 
+                                    bl_report.SERIAL_NUMBER,
+                                    bl_report.OVERALL_RESULT,
+                                    bl_report.CAPACITY)
+            print(cursor.rowcount)
             conn.commit()            
             cursor.close() 
     conn.close()

@@ -1,7 +1,7 @@
 import logging
 machine = 'merlin'
 # machine = 'batterylab'
-local = False
+local = True
 
 logging.basicConfig(filename='harvest.log',level=logging.DEBUG,
                     format='%(asctime)s %(message)s', datefmt="%m/%d/%Y %H:%M:%S")

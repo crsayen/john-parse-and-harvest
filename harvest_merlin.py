@@ -16,6 +16,7 @@ def harvest_merlin():
     logging.info("start harvest_merlin")
     conn = connect_to_db(CONFIG)
     data_from_db = read_table(CONFIG.table,conn)
+    data_from_db.to_csv("merlin.csv")
     for report_folder_root in CONFIG.report_folder_roots:
         report_folders = os.listdir(report_folder_root)  # 
         report_folders = [f for f in report_folders if os.path.isdir(report_folder_root + f)]
@@ -36,19 +37,24 @@ def harvest_merlin():
                     #move or mark so we don't try next time?
                     pass
                 elif is_report_file:
-                    data_to_db = parse_merlin(report_folder_root + report_folder + "\\",file)
-                    print(f"{data_to_db=}")
-                    logging.info(f'write to db {data_to_db.FILE_NAME.values}')
+                    merlin_report = parse_merlin(report_folder_root + report_folder + "\\",file)
+                    # print(f"{data_to_db=}")
+                    logging.info(f'write to db {merlin_report.FILE_NAME}')
                     cursor = conn.cursor()
                     # Insert Dataframe into SQL Server:
-                    for _, row in data_to_db.iterrows():
-                        sql=f"""
+                    # for _, row in merlin_report.iterrows():
+                    sql=f"""
                         INSERT INTO {CONFIG.table}
                         (DateTimeStamp,FILE_NAME,PART_NUMBER,SERIAL_NUMBER,OVERALL_RESULT)
                         VALUES (?,?,?,?,?)
                         """
-                        cursor = cursor.execute(sql, row.DateTimeStamp,row.FILE_NAME, row.PART_NUMBER, row.SERIAL_NUMBER,row.OVERALL_RESULT)
-                        print(cursor.rowcount)
+                    cursor = cursor.execute(sql, 
+                                            merlin_report.DateTimeStamp,
+                                            merlin_report.FILE_NAME,
+                                            merlin_report.PART_NUMBER,
+                                            merlin_report.SERIAL_NUMBER,
+                                            merlin_report.OVERALL_RESULT)
+                    print(cursor.rowcount)
                     conn.commit()            
                     cursor.close()
     conn.close()
