@@ -1,5 +1,5 @@
-/__pycache__
-/reports
+*/__pycache__
+*/reports
 file_list.csv
-/reports_batterylab
+*/reports_batterylab
 harvest.log

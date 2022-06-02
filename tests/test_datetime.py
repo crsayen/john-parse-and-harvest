@@ -1,8 +1,8 @@
 import pytest
 from datetime import datetime
 import time
-from dateParsing import parse_date_string
-from dateParsing import battlab_date_from_filename
+from util.dateParsing import parse_date_string
+from util.dateParsing import battlab_date_from_filename
 
 
 def test_filetime():
@@ -14,7 +14,8 @@ def test_filetime():
     assert d.hour == 12
     assert d.minute == 54
 
-def test_date_from_batt_record_good():  
+
+def test_date_from_batt_record_good():
     dt = parse_date_string('<TH ALIGN="LEFT"><H3>4/26/2022 2:28 PM</H3></TH>')
     assert dt.year == 2022
     assert dt.month == 4
@@ -22,15 +23,19 @@ def test_date_from_batt_record_good():
     assert dt.hour == 14
     assert dt.minute == 28
 
-def test_date_from_batt_record_bogus():  
-    dt = parse_date_string('<TH ALIGN="CENTER"><H3>Battery Module : Prius NiMH</H3></TH>')
+
+def test_date_from_batt_record_bogus():
+    dt = parse_date_string(
+        '<TH ALIGN="CENTER"><H3>Battery Module : Prius NiMH</H3></TH>'
+    )
     assert dt.year == 1900
     assert dt.month == 1
     assert dt.day == 1
     assert dt.hour == 1
-    
+
+
 if __name__ == "__main__":
     starttime = time.perf_counter()
     test_date_from_batt_record()
 
-    print('end harvest', time.perf_counter()-starttime)
+    print("end harvest", time.perf_counter() - starttime)
