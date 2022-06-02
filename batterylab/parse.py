@@ -1,3 +1,4 @@
+from typing import Callable
 from util.dateParsing import parse_date_string
 import datetime
 
@@ -12,7 +13,7 @@ class parse_batterylab:
         self.SERIAL_NUMBER = ""
         self.OVERALL_RESULT = ""
         self.CAPACITY = ""
-        self.label_map: dict[str, tuple[str, list[callable]]] = {
+        self.label_map: dict[str, tuple[str, list[Callable[[str], str]]]] = {
             "Battery Module :": ("PART_NUMBER", [self.rm_h_tags]),
             "Serial Number :": ("SERIAL_NUMBER", []),
             "Test Result :": ("OVERALL_RESULT", []),
@@ -32,13 +33,13 @@ class parse_batterylab:
                         pn = fn(pn)
                     setattr(self, prop, pn)
 
-    def extract_pn(self, line, label, loc):
+    def extract_pn(self, line: str, label: str, loc: int) -> str:
         return line[loc + len(label) + 1 :]
 
-    def rm_h_tags(self, pn: str):
+    def rm_h_tags(self, pn: str) -> str:
         return pn.replace("</H3>", "").replace("</TH>", "")
 
-    def handle_date(self, idx, line):
+    def handle_date(self, idx: str, line: str) -> None:
         if 12 < idx < 18 and (dt := parse_date_string(line)).year > 2000:
             self.DateTimeStamp = dt
 
