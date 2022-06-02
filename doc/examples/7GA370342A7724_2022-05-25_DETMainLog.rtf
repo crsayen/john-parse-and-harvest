@@ -1,0 +1,702 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil Arial;}{\f1\fnil\fcharset0 Arial;}}
+{\colortbl ;\red0\green0\blue0;\red0\green0\blue255;\red0\green128\blue0;\red255\green0\blue0;}
+\viewkind4\uc1\pard\cf1\f0\fs17 Date: 2022-05-25     Time: 12:22:29 PM  (v9.0.1)\par
+ \par
+\b All support requests should be submitted to: https://www.jira.ford.com/servicedesk/customer/portal/55 or corenetc@ford.com\ul\par
+DET IS NOT FOR PRODUCTION USE.\par
+\cf2\ulnone\b0 Request for ReadDataByIdentifier (Service 0x22)  --  [ECU ID: 0x7E1 (TCM)] - Single DID\par
+     DataIdentifier:  0xF18C\par
+\cf3 Positive Response to ReadDataByIdentifier (Service 0x22)  --  [ECU ID: 0x7E9 (TCM)]\par
+     DataIdentifier:  0xF18C     Data Size: 16 byte(s)\par
+     Data (Hex): 37 47 41 33 37 30 33 34 32 41 37 37 32 34 00 00 \par
+          [0xF18C] ECU Serial Number (GDX): 7GA370342A7724\par
+\cf1\ul\b\par
+Validating VBF Sequence...\par
+\ulnone Sequence Name\b0 :  902\par
+\b VBS Filename\b0 :  C:\\Service Flash\\Test_Flash\\HTC902.vbs\par
+\b Use Specific Security Key File\b0 :  C:\\Service Flash\\TCM Security Keys.key\par
+     Number of Security Levels in File:  3\par
+\b Inhale Associated ECD File\b0 :  No\par
+\b Number of Files in VBF Sequence\b0 :  2\par
+\ul\b\par
+File #1:  C:\\Service Flash\\EE_ERASE_SW\\CV68-7J244-AA.vbf\ulnone\b0\par
+     VBF Version: 2.2,     ECU Address: 0x7E1,     Network = CAN_HS\par
+     SW Part Type: SBL,     SW Part Number: "CV68-7J244-AA",     Call Info: 0x10000,     DataFormatIdentifier To Use: 0x00\par
+     Number of Erase Blocks: 0\par
+     Number of Data Blocks: 1\par
+          Data Block #1  ---  Start Address: 0x10000, Length: 0xDDA, Checksum: 0x80CB\par
+     File Checksum: 0x22A110DC\par
+\ul\b\par
+File #2:  C:\\Service Flash\\EE_ERASE_SW\\TCM_FUSy.vbf\ulnone\b0\par
+     VBF Version: 2.2,     ECU Address: 0x7E1,     Network = CAN_HS\par
+     SW Part Type: EXE,     SW Part Number: "TCM_FUSy",     Call Info: Not Present,     DataFormatIdentifier To Use: 0x00\par
+     Number of Erase Blocks: 8\par
+          Erase Block #1  ---  Start Address: 0x7B0000, Length: 0x4000\par
+          Erase Block #2  ---  Start Address: 0x7B4000, Length: 0x4000\par
+          Erase Block #3  ---  Start Address: 0x7B8000, Length: 0x8000\par
+          Erase Block #4  ---  Start Address: 0x7C0000, Length: 0x8000\par
+          Erase Block #5  ---  Start Address: 0x7C8000, Length: 0x8000\par
+          Erase Block #6  ---  Start Address: 0x7D0000, Length: 0x8000\par
+          Erase Block #7  ---  Start Address: 0x7D8000, Length: 0x8000\par
+          Erase Block #8  ---  Start Address: 0x7E0000, Length: 0x8000\par
+     Number of Data Blocks: 5\par
+          Data Block #1  ---  Start Address: 0x7B0000, Length: 0x14, Checksum: 0xF569\par
+          Data Block #2  ---  Start Address: 0x7B0028, Length: 0x3BCA, Checksum: 0x370\par
+          Data Block #3  ---  Start Address: 0x7B3BF4, Length: 0x378, Checksum: 0x8EA2\par
+          Data Block #4  ---  Start Address: 0x7C8000, Length: 0x8, Checksum: 0xE880\par
+          Data Block #5  ---  Start Address: 0x7DFFF8, Length: 0x8, Checksum: 0xD2AF\par
+     File Checksum: 0xDAA85F24\par
+\ul\b\par
+\par
+Downloading VBF sequence ... (902)\par
+\ulnone\b0 Note: Not utilizing Fast Download Method.\par
+Note: STmin override not enabled.\par
+Functionally transitioning ECUs to programmingSession - User Initialized Connection ... \cf3 Ok (Tx Ok, Response Suppressed)\par
+\cf1\ul\par
+Starting file 1 of 2:  C:\\Service Flash\\EE_ERASE_SW\\CV68-7J244-AA.vbf\par
+\ulnone Attempting to communicate to ECU 0x7E1 on User Initialized Connection ... ECU Found\par
+Physically transitioning ECU to programmingSession on User Initialized Connection ... \cf3 Ok\par
+\cf1 Determining level of SWDL Specification Supported ... \cf3 Ok\par
+\cf1      Supported SWDL Specification Version = 004\par
+Reading ECU Core Assembly Part Number 0xF111 ... \cf3 Ok\par
+\cf1      DID 0xF111 = EV68-14F085-AB\par
+Attempting to Unlock Security Access for Level 0x01 ... \cf3 Ok\par
+\cf1 Programming Memory Block 1 of 1  (Address 0x10000, Length 0xDDA) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 1 of 1 with transferExit request...\cf3 Ok\par
+\cf1 Activating SBL...\cf3 Ok\par
+\cf1 Elapsed download time is 1.95 seconds.\par
+\ul\par
+Starting file 2 of 2:  C:\\Service Flash\\EE_ERASE_SW\\TCM_FUSy.vbf\par
+\ulnone Attempting to Unlock Security Access for Level 0x01 ... \cf3 Ok\par
+\cf1 Erasing Memory Block 1 of 8  (Address 0x7B0000, Length 0x4000) ... \cf3 Ok\par
+\cf1 Erasing Memory Block 2 of 8  (Address 0x7B4000, Length 0x4000) ... \cf3 Ok\par
+\cf1 Erasing Memory Block 3 of 8  (Address 0x7B8000, Length 0x8000) ... \cf3 Ok\par
+\cf1 Erasing Memory Block 4 of 8  (Address 0x7C0000, Length 0x8000) ... \cf3 Ok\par
+\cf1 Erasing Memory Block 5 of 8  (Address 0x7C8000, Length 0x8000) ... \cf3 Ok\par
+\cf1 Erasing Memory Block 6 of 8  (Address 0x7D0000, Length 0x8000) ... \cf3 Ok\par
+\cf1 Erasing Memory Block 7 of 8  (Address 0x7D8000, Length 0x8000) ... \cf3 Ok\par
+\cf1 Erasing Memory Block 8 of 8  (Address 0x7E0000, Length 0x8000) ... \cf3 Ok\par
+\cf1 Programming Memory Block 1 of 5  (Address 0x7B0000, Length 0x14) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 1 of 5 with transferExit request...\cf3 Ok\par
+\cf1 Programming Memory Block 2 of 5  (Address 0x7B0028, Length 0x3BCA) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 2 of 5 with transferExit request...\cf3 Ok\par
+\cf1 Programming Memory Block 3 of 5  (Address 0x7B3BF4, Length 0x378) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 3 of 5 with transferExit request...\cf3 Ok\par
+\cf1 Programming Memory Block 4 of 5  (Address 0x7C8000, Length 0x8) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 4 of 5 with transferExit request...\cf3 Ok\par
+\cf1 Programming Memory Block 5 of 5  (Address 0x7DFFF8, Length 0x8) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 5 of 5 with transferExit request...\cf3 Ok\par
+\cf1 Checking for valid application ... \cf3 Ok\par
+\cf1 Elapsed download time was 13.05 seconds.\par
+Functionally resetting ECUs - User Initialized Connection ... \cf3 Ok (Tx Ok, Response Suppressed)\par
+\cf1 Functionally clearing DTCs - User Initialized Connection ... \cf4 Not Ok\par
+     --- No Response from ECU!\par
+\cf1 Software Download Result:  No critical errors occurred during SWDL!\par
+\ul\b\par
+Validating VBF Sequence...\par
+\ulnone Sequence Name\b0 :  902\par
+\b VBS Filename\b0 :  C:\\Service Flash\\Test_Flash\\HTC902.vbs\par
+\b Use Specific Security Key File\b0 :  C:\\Service Flash\\TCM Security Keys.key\par
+     Number of Security Levels in File:  3\par
+\b Inhale Associated ECD File\b0 :  No\par
+\b Number of Files in VBF Sequence\b0 :  2\par
+\ul\b\par
+File #1:  C:\\Service Flash\\EE_ERASE_SW\\CV68-7J244-AA.vbf\ulnone\b0\par
+     VBF Version: 2.2,     ECU Address: 0x7E1,     Network = CAN_HS\par
+     SW Part Type: SBL,     SW Part Number: "CV68-7J244-AA",     Call Info: 0x10000,     DataFormatIdentifier To Use: 0x00\par
+     Number of Erase Blocks: 0\par
+     Number of Data Blocks: 1\par
+          Data Block #1  ---  Start Address: 0x10000, Length: 0xDDA, Checksum: 0x80CB\par
+     File Checksum: 0x22A110DC\par
+\ul\b\par
+File #2:  C:\\Service Flash\\EE_ERASE_SW\\TCM_Bootloader.vbf\ulnone\b0\par
+     VBF Version: 2.2,     ECU Address: 0x7E1,     Network = CAN_HS\par
+     SW Part Type: EXE,     SW Part Number: "TCM_Bootloader",     Call Info: Not Present,     DataFormatIdentifier To Use: 0x00\par
+     Number of Erase Blocks: 3\par
+          Erase Block #1  ---  Start Address: 0x7C8000, Length: 0x12\par
+          Erase Block #2  ---  Start Address: 0x7E8000, Length: 0x3FFE\par
+          Erase Block #3  ---  Start Address: 0x7EC000, Length: 0x3FFE\par
+     Number of Data Blocks: 5\par
+          Data Block #1  ---  Start Address: 0x7C8000, Length: 0x8, Checksum: 0x90DC\par
+          Data Block #2  ---  Start Address: 0x7EC000, Length: 0xC, Checksum: 0x508D\par
+          Data Block #3  ---  Start Address: 0x7EC020, Length: 0x376E, Checksum: 0xB157\par
+          Data Block #4  ---  Start Address: 0x7EF790, Length: 0x46E, Checksum: 0xE323\par
+          Data Block #5  ---  Start Address: 0x7EFF00, Length: 0x100, Checksum: 0xA7B3\par
+     File Checksum: 0xF60B0BBA\par
+\ul\b\par
+\par
+Downloading VBF sequence ... (902)\par
+\ulnone\b0 Note: Not utilizing Fast Download Method.\par
+Note: STmin override not enabled.\par
+Functionally transitioning ECUs to programmingSession - User Initialized Connection ... \cf3 Ok (Tx Ok, Response Suppressed)\par
+\cf1\ul\par
+Starting file 1 of 2:  C:\\Service Flash\\EE_ERASE_SW\\CV68-7J244-AA.vbf\par
+\ulnone Attempting to communicate to ECU 0x7E1 on User Initialized Connection ... ECU Found\par
+Physically transitioning ECU to programmingSession on User Initialized Connection ... \cf3 Ok\par
+\cf1 Determining level of SWDL Specification Supported ... \cf3 Ok\par
+\cf1      Supported SWDL Specification Version = 004\par
+Reading ECU Core Assembly Part Number 0xF111 ... \cf4 Not Ok\par
+Negative Response to ReadDataByIdentifier (Service 0x22)  --  [ECU ID: 0x7E9 (TCM)]\par
+     Response Code: 0x31 (Request Out Of Range)\par
+\cf1 Attempting to Unlock Security Access for Level 0x01 ... \cf3 Ok\par
+\cf1 Programming Memory Block 1 of 1  (Address 0x10000, Length 0xDDA) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 1 of 1 with transferExit request...\cf3 Ok\par
+\cf1 Activating SBL...\cf3 Ok\par
+\cf1 Elapsed download time is 1.95 seconds.\par
+\ul\par
+Starting file 2 of 2:  C:\\Service Flash\\EE_ERASE_SW\\TCM_Bootloader.vbf\par
+\ulnone Attempting to Unlock Security Access for Level 0x01 ... \cf3 Ok\par
+\cf1 Erasing Memory Block 1 of 3  (Address 0x7C8000, Length 0x12) ... \cf3 Ok\par
+\cf1 Erasing Memory Block 2 of 3  (Address 0x7E8000, Length 0x3FFE) ... \cf3 Ok\par
+\cf1 Erasing Memory Block 3 of 3  (Address 0x7EC000, Length 0x3FFE) ... \cf3 Ok\par
+\cf1 Programming Memory Block 1 of 5  (Address 0x7C8000, Length 0x8) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 1 of 5 with transferExit request...\cf3 Ok\par
+\cf1 Programming Memory Block 2 of 5  (Address 0x7EC000, Length 0xC) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 2 of 5 with transferExit request...\cf3 Ok\par
+\cf1 Programming Memory Block 3 of 5  (Address 0x7EC020, Length 0x376E) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 3 of 5 with transferExit request...\cf3 Ok\par
+\cf1 Programming Memory Block 4 of 5  (Address 0x7EF790, Length 0x46E) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 4 of 5 with transferExit request...\cf3 Ok\par
+\cf1 Programming Memory Block 5 of 5  (Address 0x7EFF00, Length 0x100) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 5 of 5 with transferExit request...\cf3 Ok\par
+\cf1 Checking for valid application ... \cf3 Ok\par
+\cf1 Elapsed download time was 6.88 seconds.\par
+Functionally resetting ECUs - User Initialized Connection ... \cf3 Ok (Tx Ok, Response Suppressed)\par
+\cf1 Functionally clearing DTCs - User Initialized Connection ... \cf4 Not Ok\par
+     --- No Response from ECU!\par
+\cf1 Software Download Result:  No critical errors occurred during SWDL!\par
+\ul\b\par
+Validating VBF Sequence...\par
+\ulnone Sequence Name\b0 :  902\par
+\b VBS Filename\b0 :  C:\\Service Flash\\Test_Flash\\HTC902.vbs\par
+\b Use Specific Security Key File\b0 :  C:\\Service Flash\\TCM Security Keys.key\par
+     Number of Security Levels in File:  3\par
+\b Inhale Associated ECD File\b0 :  No\par
+\b Number of Files in VBF Sequence\b0 :  2\par
+\ul\b\par
+File #1:  C:\\Service Flash\\EE_ERASE_SW\\CV68-7J244-AA.vbf\ulnone\b0\par
+     VBF Version: 2.2,     ECU Address: 0x7E1,     Network = CAN_HS\par
+     SW Part Type: SBL,     SW Part Number: "CV68-7J244-AA",     Call Info: 0x10000,     DataFormatIdentifier To Use: 0x00\par
+     Number of Erase Blocks: 0\par
+     Number of Data Blocks: 1\par
+          Data Block #1  ---  Start Address: 0x10000, Length: 0xDDA, Checksum: 0x80CB\par
+     File Checksum: 0x22A110DC\par
+\ul\b\par
+File #2:  C:\\Service Flash\\EE_ERASE_SW\\FV68-7J-EE-ERASE.vbf\ulnone\b0\par
+     VBF Version: 2.2,     ECU Address: 0x7E1,     Network = CAN_HS\par
+     SW Part Type: EXE,     SW Part Number: "FV68-7J-EE-ERASE",     Call Info: Not Present,     DataFormatIdentifier To Use: 0x00\par
+     Number of Erase Blocks: 9\par
+          Erase Block #1  ---  Start Address: 0x7B0000, Length: 0x4000\par
+          Erase Block #2  ---  Start Address: 0x7B4000, Length: 0x4000\par
+          Erase Block #3  ---  Start Address: 0x7B8000, Length: 0x8000\par
+          Erase Block #4  ---  Start Address: 0x7C0000, Length: 0x8000\par
+          Erase Block #5  ---  Start Address: 0x7C8000, Length: 0x8000\par
+          Erase Block #6  ---  Start Address: 0x7D0000, Length: 0x8000\par
+          Erase Block #7  ---  Start Address: 0x7D8000, Length: 0x8000\par
+          Erase Block #8  ---  Start Address: 0x7E0000, Length: 0x8000\par
+          Erase Block #9  ---  Start Address: 0x7E8000, Length: 0x4000\par
+     Number of Data Blocks: 7\par
+          Data Block #1  ---  Start Address: 0x7B0000, Length: 0xC, Checksum: 0xB56B\par
+          Data Block #2  ---  Start Address: 0x7B0028, Length: 0x411E, Checksum: 0xE271\par
+          Data Block #3  ---  Start Address: 0x7B4148, Length: 0x7C5E, Checksum: 0xBD13\par
+          Data Block #4  ---  Start Address: 0x7BBDA8, Length: 0xC252, Checksum: 0x448E\par
+          Data Block #5  ---  Start Address: 0x7C8000, Length: 0x1D12A, Checksum: 0xD511\par
+          Data Block #6  ---  Start Address: 0x7E512C, Length: 0x2ED0, Checksum: 0x786C\par
+          Data Block #7  ---  Start Address: 0x7E8000, Length: 0x132E, Checksum: 0xB1D\par
+     File Checksum: 0xD865E891\par
+\ul\b\par
+\par
+Downloading VBF sequence ... (902)\par
+\ulnone\b0 Note: Not utilizing Fast Download Method.\par
+Note: STmin override not enabled.\par
+Functionally transitioning ECUs to programmingSession - User Initialized Connection ... \cf3 Ok (Tx Ok, Response Suppressed)\par
+\cf1\ul\par
+Starting file 1 of 2:  C:\\Service Flash\\EE_ERASE_SW\\CV68-7J244-AA.vbf\par
+\ulnone Attempting to communicate to ECU 0x7E1 on User Initialized Connection ... ECU Found\par
+Physically transitioning ECU to programmingSession on User Initialized Connection ... \cf3 Ok\par
+\cf1 Determining level of SWDL Specification Supported ... \cf3 Ok\par
+\cf1      Supported SWDL Specification Version = 004\par
+Reading ECU Core Assembly Part Number 0xF111 ... \cf3 Ok\par
+\cf1      DID 0xF111 = EV68-14F085-AB\par
+Attempting to Unlock Security Access for Level 0x01 ... \cf3 Ok\par
+\cf1 Programming Memory Block 1 of 1  (Address 0x10000, Length 0xDDA) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 1 of 1 with transferExit request...\cf3 Ok\par
+\cf1 Activating SBL...\cf3 Ok\par
+\cf1 Elapsed download time is 1.96 seconds.\par
+\ul\par
+Starting file 2 of 2:  C:\\Service Flash\\EE_ERASE_SW\\FV68-7J-EE-ERASE.vbf\par
+\ulnone Attempting to Unlock Security Access for Level 0x01 ... \cf3 Ok\par
+\cf1 Erasing Memory Block 1 of 9  (Address 0x7B0000, Length 0x4000) ... \cf3 Ok\par
+\cf1 Erasing Memory Block 2 of 9  (Address 0x7B4000, Length 0x4000) ... \cf3 Ok\par
+\cf1 Erasing Memory Block 3 of 9  (Address 0x7B8000, Length 0x8000) ... \cf3 Ok\par
+\cf1 Erasing Memory Block 4 of 9  (Address 0x7C0000, Length 0x8000) ... \cf3 Ok\par
+\cf1 Erasing Memory Block 5 of 9  (Address 0x7C8000, Length 0x8000) ... \cf3 Ok\par
+\cf1 Erasing Memory Block 6 of 9  (Address 0x7D0000, Length 0x8000) ... \cf3 Ok\par
+\cf1 Erasing Memory Block 7 of 9  (Address 0x7D8000, Length 0x8000) ... \cf3 Ok\par
+\cf1 Erasing Memory Block 8 of 9  (Address 0x7E0000, Length 0x8000) ... \cf3 Ok\par
+\cf1 Erasing Memory Block 9 of 9  (Address 0x7E8000, Length 0x4000) ... \cf3 Ok\par
+\cf1 Programming Memory Block 1 of 7  (Address 0x7B0000, Length 0xC) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 1 of 7 with transferExit request...\cf3 Ok\par
+\cf1 Programming Memory Block 2 of 7  (Address 0x7B0028, Length 0x411E) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 2 of 7 with transferExit request...\cf3 Ok\par
+\cf1 Programming Memory Block 3 of 7  (Address 0x7B4148, Length 0x7C5E) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 3 of 7 with transferExit request...\cf3 Ok\par
+\cf1 Programming Memory Block 4 of 7  (Address 0x7BBDA8, Length 0xC252) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 4 of 7 with transferExit request...\cf3 Ok\par
+\cf1 Programming Memory Block 5 of 7  (Address 0x7C8000, Length 0x1D12A) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 5 of 7 with transferExit request...\cf3 Ok\par
+\cf1 Programming Memory Block 6 of 7  (Address 0x7E512C, Length 0x2ED0) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 6 of 7 with transferExit request...\cf3 Ok\par
+\cf1 Programming Memory Block 7 of 7  (Address 0x7E8000, Length 0x132E) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 7 of 7 with transferExit request...\cf3 Ok\par
+\cf1 Checking for valid application ... \cf3 Ok\par
+\cf1 Elapsed download time was 35.16 seconds.\par
+Functionally resetting ECUs - User Initialized Connection ... \cf3 Ok (Tx Ok, Response Suppressed)\par
+\cf1 Functionally clearing DTCs - User Initialized Connection ... \cf3 Ok (Response Received)\par
+\cf1 Software Download Result:  No critical errors occurred during SWDL!\par
+\cf2 Request for ReadDataByIdentifier (Service 0x22)  --  [ECU ID: 0x7E1 (TCM)] - Single DID\par
+     DataIdentifier:  0x487D\par
+\cf3 Positive Response to ReadDataByIdentifier (Service 0x22)  --  [ECU ID: 0x7E9 (TCM)]\par
+     DataIdentifier:  0x487D     Data Size: 2 byte(s)\par
+     Data (Hex): 05 6D \par
+          [0x487D] Drive Motor "A" Position Sensor Offset Value (GDX): 4.5715625 Radian\par
+\cf2 Request for ReadDataByIdentifier (Service 0x22)  --  [ECU ID: 0x7E1 (TCM)] - Single DID\par
+     DataIdentifier:  0xF17C\par
+\cf3 Positive Response to ReadDataByIdentifier (Service 0x22)  --  [ECU ID: 0x7E9 (TCM)]\par
+     DataIdentifier:  0xF17C     Data Size: 11 byte(s)\par
+     Data (Hex): 20 00 00 8C 00 00 00 00 00 00 00 \par
+          [0xF17C] NOS Bootloader Generation Tool Version Number (GDX):    ---   (Packeted DID)\par
+          NOS Bootloader Generation Tool Supplier: Decode Value Not Found!\par
+          NOS Bootloader Generation Tool Version Number: 00 00 8C 00 00 00 00 00 00 00\par
+\cf2 Request for ReadDataByIdentifier (Service 0x22)  --  [ECU ID: 0x7E1 (TCM)] - Single DID\par
+     DataIdentifier:  0x487D\par
+\cf3 Positive Response to ReadDataByIdentifier (Service 0x22)  --  [ECU ID: 0x7E9 (TCM)]\par
+     DataIdentifier:  0x487D     Data Size: 2 byte(s)\par
+     Data (Hex): 05 6D \par
+          [0x487D] Drive Motor "A" Position Sensor Offset Value (GDX): 4.5715625 Radian\par
+\cf2 Request for ReadDataByIdentifier (Service 0x22)  --  [ECU ID: 0x7E1 (TCM)] - Single DID\par
+     DataIdentifier:  0xF17C\par
+\cf3 Positive Response to ReadDataByIdentifier (Service 0x22)  --  [ECU ID: 0x7E9 (TCM)]\par
+     DataIdentifier:  0xF17C     Data Size: 11 byte(s)\par
+     Data (Hex): 20 00 00 00 00 00 00 00 00 00 00 \par
+          [0xF17C] NOS Bootloader Generation Tool Version Number (GDX):    ---   (Packeted DID)\par
+          NOS Bootloader Generation Tool Supplier: Decode Value Not Found!\par
+          NOS Bootloader Generation Tool Version Number: 00 00 00 00 00 00 00 00 00 00\par
+\cf1\ul\b\par
+Validating VBF Sequence...\par
+\ulnone Sequence Name\b0 :  902\par
+\b VBS Filename\b0 :  C:\\Service Flash\\Test_Flash\\HTC902.vbs\par
+\b Use Specific Security Key File\b0 :  C:\\Service Flash\\TCM Security Keys.key\par
+     Number of Security Levels in File:  3\par
+\b Inhale Associated ECD File\b0 :  No\par
+\b Number of Files in VBF Sequence\b0 :  2\par
+\ul\b\par
+File #1:  C:\\Service Flash\\FNA Service\\TCM.FMC.MY.17.01.AD.RELE_FNA_SERVICE_700734AB\\TCM.FMC.MY.17.01.AD.RELE\\CV68-7J244-AA.vbf\ulnone\b0\par
+     VBF Version: 2.2,     ECU Address: 0x7E1,     Network = CAN_HS\par
+     SW Part Type: SBL,     SW Part Number: "CV68-7J244-AA",     Call Info: 0x10000,     DataFormatIdentifier To Use: 0x00\par
+     Number of Erase Blocks: 0\par
+     Number of Data Blocks: 1\par
+          Data Block #1  ---  Start Address: 0x10000, Length: 0xDDA, Checksum: 0x80CB\par
+     File Checksum: 0x22A110DC\par
+\ul\b\par
+File #2:  C:\\Service Flash\\FNA Service\\TCM.FMC.MY.17.01.AD.RELE_FNA_SERVICE_700734AB\\TCM.FMC.MY.17.01.AD.RELE\\TCM_FUSy.vbf\ulnone\b0\par
+     VBF Version: 2.2,     ECU Address: 0x7E1,     Network = CAN_HS\par
+     SW Part Type: EXE,     SW Part Number: "TCM_FUSy",     Call Info: Not Present,     DataFormatIdentifier To Use: 0x00\par
+     Number of Erase Blocks: 8\par
+          Erase Block #1  ---  Start Address: 0x7B0000, Length: 0x4000\par
+          Erase Block #2  ---  Start Address: 0x7B4000, Length: 0x4000\par
+          Erase Block #3  ---  Start Address: 0x7B8000, Length: 0x8000\par
+          Erase Block #4  ---  Start Address: 0x7C0000, Length: 0x8000\par
+          Erase Block #5  ---  Start Address: 0x7C8000, Length: 0x8000\par
+          Erase Block #6  ---  Start Address: 0x7D0000, Length: 0x8000\par
+          Erase Block #7  ---  Start Address: 0x7D8000, Length: 0x8000\par
+          Erase Block #8  ---  Start Address: 0x7E0000, Length: 0x8000\par
+     Number of Data Blocks: 5\par
+          Data Block #1  ---  Start Address: 0x7B0000, Length: 0x14, Checksum: 0xF569\par
+          Data Block #2  ---  Start Address: 0x7B0028, Length: 0x3BCA, Checksum: 0x370\par
+          Data Block #3  ---  Start Address: 0x7B3BF4, Length: 0x378, Checksum: 0x8EA2\par
+          Data Block #4  ---  Start Address: 0x7C8000, Length: 0x8, Checksum: 0xE880\par
+          Data Block #5  ---  Start Address: 0x7DFFF8, Length: 0x8, Checksum: 0xD2AF\par
+     File Checksum: 0xDAA85F24\par
+\ul\b\par
+\par
+Downloading VBF sequence ... (902)\par
+\ulnone\b0 Note: Not utilizing Fast Download Method.\par
+Note: STmin override not enabled.\par
+Functionally transitioning ECUs to programmingSession - User Initialized Connection ... \cf3 Ok (Tx Ok, Response Suppressed)\par
+\cf1\ul\par
+Starting file 1 of 2:  C:\\Service Flash\\FNA Service\\TCM.FMC.MY.17.01.AD.RELE_FNA_SERVICE_700734AB\\TCM.FMC.MY.17.01.AD.RELE\\CV68-7J244-AA.vbf\par
+\ulnone Attempting to communicate to ECU 0x7E1 on User Initialized Connection ... ECU Found\par
+Physically transitioning ECU to programmingSession on User Initialized Connection ... \cf3 Ok\par
+\cf1 Determining level of SWDL Specification Supported ... \cf3 Ok\par
+\cf1      Supported SWDL Specification Version = 004\par
+Reading ECU Core Assembly Part Number 0xF111 ... \cf3 Ok\par
+\cf1      DID 0xF111 = EV68-14F085-AB\par
+Attempting to Unlock Security Access for Level 0x01 ... \cf3 Ok\par
+\cf1 Programming Memory Block 1 of 1  (Address 0x10000, Length 0xDDA) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 1 of 1 with transferExit request...\cf3 Ok\par
+\cf1 Activating SBL...\cf3 Ok\par
+\cf1 Elapsed download time is 1.97 seconds.\par
+\ul\par
+Starting file 2 of 2:  C:\\Service Flash\\FNA Service\\TCM.FMC.MY.17.01.AD.RELE_FNA_SERVICE_700734AB\\TCM.FMC.MY.17.01.AD.RELE\\TCM_FUSy.vbf\par
+\ulnone Attempting to Unlock Security Access for Level 0x01 ... \cf3 Ok\par
+\cf1 Erasing Memory Block 1 of 8  (Address 0x7B0000, Length 0x4000) ... \cf3 Ok\par
+\cf1 Erasing Memory Block 2 of 8  (Address 0x7B4000, Length 0x4000) ... \cf3 Ok\par
+\cf1 Erasing Memory Block 3 of 8  (Address 0x7B8000, Length 0x8000) ... \cf3 Ok\par
+\cf1 Erasing Memory Block 4 of 8  (Address 0x7C0000, Length 0x8000) ... \cf3 Ok\par
+\cf1 Erasing Memory Block 5 of 8  (Address 0x7C8000, Length 0x8000) ... \cf3 Ok\par
+\cf1 Erasing Memory Block 6 of 8  (Address 0x7D0000, Length 0x8000) ... \cf3 Ok\par
+\cf1 Erasing Memory Block 7 of 8  (Address 0x7D8000, Length 0x8000) ... \cf3 Ok\par
+\cf1 Erasing Memory Block 8 of 8  (Address 0x7E0000, Length 0x8000) ... \cf3 Ok\par
+\cf1 Programming Memory Block 1 of 5  (Address 0x7B0000, Length 0x14) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 1 of 5 with transferExit request...\cf3 Ok\par
+\cf1 Programming Memory Block 2 of 5  (Address 0x7B0028, Length 0x3BCA) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 2 of 5 with transferExit request...\cf3 Ok\par
+\cf1 Programming Memory Block 3 of 5  (Address 0x7B3BF4, Length 0x378) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 3 of 5 with transferExit request...\cf3 Ok\par
+\cf1 Programming Memory Block 4 of 5  (Address 0x7C8000, Length 0x8) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 4 of 5 with transferExit request...\cf3 Ok\par
+\cf1 Programming Memory Block 5 of 5  (Address 0x7DFFF8, Length 0x8) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 5 of 5 with transferExit request...\cf3 Ok\par
+\cf1 Checking for valid application ... \cf3 Ok\par
+\cf1 Elapsed download time was 13.17 seconds.\par
+Functionally resetting ECUs - User Initialized Connection ... \cf3 Ok (Tx Ok, Response Suppressed)\par
+\cf1 Functionally clearing DTCs - User Initialized Connection ... \cf4 Not Ok\par
+     --- No Response from ECU!\par
+\cf1 Software Download Result:  No critical errors occurred during SWDL!\par
+\ul\b\par
+Validating VBF Sequence...\par
+\ulnone Sequence Name\b0 :  902\par
+\b VBS Filename\b0 :  C:\\Service Flash\\Test_Flash\\HTC902.vbs\par
+\b Use Specific Security Key File\b0 :  C:\\Service Flash\\TCM Security Keys.key\par
+     Number of Security Levels in File:  3\par
+\b Inhale Associated ECD File\b0 :  No\par
+\b Number of Files in VBF Sequence\b0 :  2\par
+\ul\b\par
+File #1:  C:\\Service Flash\\FNA Service\\TCM.FMC.MY.17.01.AD.RELE_FNA_SERVICE_700734AB\\TCM.FMC.MY.17.01.AD.RELE\\CV68-7J244-AA.vbf\ulnone\b0\par
+     VBF Version: 2.2,     ECU Address: 0x7E1,     Network = CAN_HS\par
+     SW Part Type: SBL,     SW Part Number: "CV68-7J244-AA",     Call Info: 0x10000,     DataFormatIdentifier To Use: 0x00\par
+     Number of Erase Blocks: 0\par
+     Number of Data Blocks: 1\par
+          Data Block #1  ---  Start Address: 0x10000, Length: 0xDDA, Checksum: 0x80CB\par
+     File Checksum: 0x22A110DC\par
+\ul\b\par
+File #2:  C:\\Service Flash\\FNA Service\\TCM.FMC.MY.17.01.AD.RELE_FNA_SERVICE_700734AB\\TCM.FMC.MY.17.01.AD.RELE\\TCM_Bootloader.vbf\ulnone\b0\par
+     VBF Version: 2.2,     ECU Address: 0x7E1,     Network = CAN_HS\par
+     SW Part Type: EXE,     SW Part Number: "TCM_Bootloader",     Call Info: Not Present,     DataFormatIdentifier To Use: 0x00\par
+     Number of Erase Blocks: 3\par
+          Erase Block #1  ---  Start Address: 0x7C8000, Length: 0x12\par
+          Erase Block #2  ---  Start Address: 0x7E8000, Length: 0x3FFE\par
+          Erase Block #3  ---  Start Address: 0x7EC000, Length: 0x3FFE\par
+     Number of Data Blocks: 5\par
+          Data Block #1  ---  Start Address: 0x7C8000, Length: 0x8, Checksum: 0x90DC\par
+          Data Block #2  ---  Start Address: 0x7EC000, Length: 0xC, Checksum: 0x508D\par
+          Data Block #3  ---  Start Address: 0x7EC020, Length: 0x376E, Checksum: 0xB157\par
+          Data Block #4  ---  Start Address: 0x7EF790, Length: 0x46E, Checksum: 0x26F7\par
+          Data Block #5  ---  Start Address: 0x7EFF00, Length: 0x100, Checksum: 0xA7B3\par
+     File Checksum: 0x1F4A130\par
+\ul\b\par
+\par
+Downloading VBF sequence ... (902)\par
+\ulnone\b0 Note: Not utilizing Fast Download Method.\par
+Note: STmin override not enabled.\par
+Functionally transitioning ECUs to programmingSession - User Initialized Connection ... \cf3 Ok (Tx Ok, Response Suppressed)\par
+\cf1\ul\par
+Starting file 1 of 2:  C:\\Service Flash\\FNA Service\\TCM.FMC.MY.17.01.AD.RELE_FNA_SERVICE_700734AB\\TCM.FMC.MY.17.01.AD.RELE\\CV68-7J244-AA.vbf\par
+\ulnone Attempting to communicate to ECU 0x7E1 on User Initialized Connection ... ECU Found\par
+Physically transitioning ECU to programmingSession on User Initialized Connection ... \cf3 Ok\par
+\cf1 Determining level of SWDL Specification Supported ... \cf3 Ok\par
+\cf1      Supported SWDL Specification Version = 004\par
+Reading ECU Core Assembly Part Number 0xF111 ... \cf4 Not Ok\par
+Negative Response to ReadDataByIdentifier (Service 0x22)  --  [ECU ID: 0x7E9 (TCM)]\par
+     Response Code: 0x31 (Request Out Of Range)\par
+\cf1 Attempting to Unlock Security Access for Level 0x01 ... \cf3 Ok\par
+\cf1 Programming Memory Block 1 of 1  (Address 0x10000, Length 0xDDA) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 1 of 1 with transferExit request...\cf3 Ok\par
+\cf1 Activating SBL...\cf3 Ok\par
+\cf1 Elapsed download time is 1.96 seconds.\par
+\ul\par
+Starting file 2 of 2:  C:\\Service Flash\\FNA Service\\TCM.FMC.MY.17.01.AD.RELE_FNA_SERVICE_700734AB\\TCM.FMC.MY.17.01.AD.RELE\\TCM_Bootloader.vbf\par
+\ulnone Attempting to Unlock Security Access for Level 0x01 ... \cf3 Ok\par
+\cf1 Erasing Memory Block 1 of 3  (Address 0x7C8000, Length 0x12) ... \cf3 Ok\par
+\cf1 Erasing Memory Block 2 of 3  (Address 0x7E8000, Length 0x3FFE) ... \cf3 Ok\par
+\cf1 Erasing Memory Block 3 of 3  (Address 0x7EC000, Length 0x3FFE) ... \cf3 Ok\par
+\cf1 Programming Memory Block 1 of 5  (Address 0x7C8000, Length 0x8) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 1 of 5 with transferExit request...\cf3 Ok\par
+\cf1 Programming Memory Block 2 of 5  (Address 0x7EC000, Length 0xC) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 2 of 5 with transferExit request...\cf3 Ok\par
+\cf1 Programming Memory Block 3 of 5  (Address 0x7EC020, Length 0x376E) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 3 of 5 with transferExit request...\cf3 Ok\par
+\cf1 Programming Memory Block 4 of 5  (Address 0x7EF790, Length 0x46E) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 4 of 5 with transferExit request...\cf3 Ok\par
+\cf1 Programming Memory Block 5 of 5  (Address 0x7EFF00, Length 0x100) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 5 of 5 with transferExit request...\cf3 Ok\par
+\cf1 Checking for valid application ... \cf3 Ok\par
+\cf1 Elapsed download time was 6.94 seconds.\par
+Functionally resetting ECUs - User Initialized Connection ... \cf3 Ok (Tx Ok, Response Suppressed)\par
+\cf1 Functionally clearing DTCs - User Initialized Connection ... \cf4 Not Ok\par
+     --- No Response from ECU!\par
+\cf1 Software Download Result:  No critical errors occurred during SWDL!\par
+\ul\b\par
+Validating VBF Sequence...\par
+\ulnone Sequence Name\b0 :  902\par
+\b VBS Filename\b0 :  C:\\Service Flash\\Test_Flash\\HTC902.vbs\par
+\b Use Specific Security Key File\b0 :  C:\\Service Flash\\TCM Security Keys.key\par
+     Number of Security Levels in File:  3\par
+\b Inhale Associated ECD File\b0 :  No\par
+\b Number of Files in VBF Sequence\b0 :  2\par
+\ul\b\par
+File #1:  C:\\Service Flash\\FNA Service\\TCM.FMC.MY.17.01.AD.RELE_FNA_SERVICE_700734AB\\TCM.FMC.MY.17.01.AD.RELE\\CV68-7J244-AA.vbf\ulnone\b0\par
+     VBF Version: 2.2,     ECU Address: 0x7E1,     Network = CAN_HS\par
+     SW Part Type: SBL,     SW Part Number: "CV68-7J244-AA",     Call Info: 0x10000,     DataFormatIdentifier To Use: 0x00\par
+     Number of Erase Blocks: 0\par
+     Number of Data Blocks: 1\par
+          Data Block #1  ---  Start Address: 0x10000, Length: 0xDDA, Checksum: 0x80CB\par
+     File Checksum: 0x22A110DC\par
+\ul\b\par
+File #2:  C:\\Service Flash\\FNA Service\\TCM.FMC.MY.17.01.AD.RELE_FNA_SERVICE_700734AB\\TCM.FMC.MY.17.01.AD.RELE\\FV68-7J104-AD.vbf\ulnone\b0\par
+     VBF Version: 2.2,     ECU Address: 0x7E1,     Network = CAN_HS\par
+     SW Part Type: EXE,     SW Part Number: "FV68-7J104-AD",     Call Info: Not Present,     DataFormatIdentifier To Use: 0x00\par
+     Number of Erase Blocks: 9\par
+          Erase Block #1  ---  Start Address: 0x7B0000, Length: 0x4000\par
+          Erase Block #2  ---  Start Address: 0x7B4000, Length: 0x4000\par
+          Erase Block #3  ---  Start Address: 0x7B8000, Length: 0x8000\par
+          Erase Block #4  ---  Start Address: 0x7C0000, Length: 0x8000\par
+          Erase Block #5  ---  Start Address: 0x7C8000, Length: 0x8000\par
+          Erase Block #6  ---  Start Address: 0x7D0000, Length: 0x8000\par
+          Erase Block #7  ---  Start Address: 0x7D8000, Length: 0x8000\par
+          Erase Block #8  ---  Start Address: 0x7E0000, Length: 0x8000\par
+          Erase Block #9  ---  Start Address: 0x7E8000, Length: 0x4000\par
+     Number of Data Blocks: 5\par
+          Data Block #1  ---  Start Address: 0x7B0000, Length: 0xC, Checksum: 0xDCD\par
+          Data Block #2  ---  Start Address: 0x7B0028, Length: 0xBD7E, Checksum: 0x38B8\par
+          Data Block #3  ---  Start Address: 0x7BBDA8, Length: 0xC256, Checksum: 0x8D61\par
+          Data Block #4  ---  Start Address: 0x7C8000, Length: 0x1D0B6, Checksum: 0x4AD1\par
+          Data Block #5  ---  Start Address: 0x7E50B8, Length: 0x41CE, Checksum: 0x6233\par
+     File Checksum: 0x8CC75A37\par
+\ul\b\par
+\par
+Downloading VBF sequence ... (902)\par
+\ulnone\b0 Note: Not utilizing Fast Download Method.\par
+Note: STmin override not enabled.\par
+Functionally transitioning ECUs to programmingSession - User Initialized Connection ... \cf3 Ok (Tx Ok, Response Suppressed)\par
+\cf1\ul\par
+Starting file 1 of 2:  C:\\Service Flash\\FNA Service\\TCM.FMC.MY.17.01.AD.RELE_FNA_SERVICE_700734AB\\TCM.FMC.MY.17.01.AD.RELE\\CV68-7J244-AA.vbf\par
+\ulnone Attempting to communicate to ECU 0x7E1 on User Initialized Connection ... ECU Found\par
+Physically transitioning ECU to programmingSession on User Initialized Connection ... \cf3 Ok\par
+\cf1 Determining level of SWDL Specification Supported ... \cf3 Ok\par
+\cf1      Supported SWDL Specification Version = 004\par
+Reading ECU Core Assembly Part Number 0xF111 ... \cf3 Ok\par
+\cf1      DID 0xF111 = EV68-14F085-AB\par
+Attempting to Unlock Security Access for Level 0x01 ... \cf3 Ok\par
+\cf1 Programming Memory Block 1 of 1  (Address 0x10000, Length 0xDDA) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 1 of 1 with transferExit request...\cf3 Ok\par
+\cf1 Activating SBL...\cf3 Ok\par
+\cf1 Elapsed download time is 1.97 seconds.\par
+\ul\par
+Starting file 2 of 2:  C:\\Service Flash\\FNA Service\\TCM.FMC.MY.17.01.AD.RELE_FNA_SERVICE_700734AB\\TCM.FMC.MY.17.01.AD.RELE\\FV68-7J104-AD.vbf\par
+\ulnone Attempting to Unlock Security Access for Level 0x01 ... \cf3 Ok\par
+\cf1 Erasing Memory Block 1 of 9  (Address 0x7B0000, Length 0x4000) ... \cf3 Ok\par
+\cf1 Erasing Memory Block 2 of 9  (Address 0x7B4000, Length 0x4000) ... \cf3 Ok\par
+\cf1 Erasing Memory Block 3 of 9  (Address 0x7B8000, Length 0x8000) ... \cf3 Ok\par
+\cf1 Erasing Memory Block 4 of 9  (Address 0x7C0000, Length 0x8000) ... \cf3 Ok\par
+\cf1 Erasing Memory Block 5 of 9  (Address 0x7C8000, Length 0x8000) ... \cf3 Ok\par
+\cf1 Erasing Memory Block 6 of 9  (Address 0x7D0000, Length 0x8000) ... \cf3 Ok\par
+\cf1 Erasing Memory Block 7 of 9  (Address 0x7D8000, Length 0x8000) ... \cf3 Ok\par
+\cf1 Erasing Memory Block 8 of 9  (Address 0x7E0000, Length 0x8000) ... \cf3 Ok\par
+\cf1 Erasing Memory Block 9 of 9  (Address 0x7E8000, Length 0x4000) ... \cf3 Ok\par
+\cf1 Programming Memory Block 1 of 5  (Address 0x7B0000, Length 0xC) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 1 of 5 with transferExit request...\cf3 Ok\par
+\cf1 Programming Memory Block 2 of 5  (Address 0x7B0028, Length 0xBD7E) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 2 of 5 with transferExit request...\cf3 Ok\par
+\cf1 Programming Memory Block 3 of 5  (Address 0x7BBDA8, Length 0xC256) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 3 of 5 with transferExit request...\cf3 Ok\par
+\cf1 Programming Memory Block 4 of 5  (Address 0x7C8000, Length 0x1D0B6) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 4 of 5 with transferExit request...\cf3 Ok\par
+\cf1 Programming Memory Block 5 of 5  (Address 0x7E50B8, Length 0x41CE) ... \cf3 Ok\par
+\cf1      Transferring data for current block...\cf3 Ok\par
+\cf1      Finalizing Memory Block 5 of 5 with transferExit request...\cf3 Ok\par
+\cf1 Checking for valid application ... \cf3 Ok\par
+\cf1 Elapsed download time was 35.07 seconds.\par
+Functionally resetting ECUs - User Initialized Connection ... \cf3 Ok (Tx Ok, Response Suppressed)\par
+\cf1 Functionally clearing DTCs - User Initialized Connection ... \cf3 Ok (Response Received)\par
+\cf1 Software Download Result:  No critical errors occurred during SWDL!\par
+\cf2 Request for DiagnosticSessionControl (Service 0x10)  --  [ECU ID: 0x7E1 (TCM)]\par
+     Session: 0x03 (extendedDiagnosticSession)  [SPRMIB = False]\par
+\cf3 Positive Response to DiagnosticSessionControl (Service 0x10)  --  [ECU ID: 0x7E9 (TCM)]\par
+     Session: 0x03 (extendedDiagnosticSession)     P2can:  50ms      P2*can: 5000ms\par
+\cf2 Request for SecurityAccess (Service 0x27)  --  [ECU ID: 0x7E1 (TCM)]\par
+     Seed Request for Security Level: 0x03 [SPRMIB = False]\par
+\cf3 Positive Response to SecurityAccess (Service 0x27)  --  [ECU ID: 0x7E9 (TCM)]\par
+     Seed Request for Security Level: 0x03 [SPRMIB = False]\par
+     Seed (Hex): 9D EE 7C \par
+\cf2 Request for SecurityAccess (Service 0x27)  --  [ECU ID: 0x7E1 (TCM)]\par
+     Key Submittal for Security Level: 0x03 [SPRMIB = False]\par
+     Key (Hex): 3A 50 5E \par
+\cf3 Positive Response to SecurityAccess (Service 0x27)  --  [ECU ID: 0x7E9 (TCM)]\par
+     Key Submittal for Security Level: 0x03 [SPRMIB = False]\par
+\cf2 Request for WriteDataByIdentifier (Service 0x2E)  --  [ECU ID: 0x7E1 (TCM)]\par
+     DataIdentifier:  0xD12F     Data Size: 5 byte(s)\par
+     Data (Hex): 74 6B 62 63 62 \par
+          [0xD12F] Security constant #2 (GDX): 74 6B 62 63 62\par
+\cf3 Positive Response to WriteDataByIdentifier (Service 0x2E)  --  [ECU ID: 0x7E9 (TCM)]\par
+     DataIdentifier:  0xD12F\par
+\cf2 Request for WriteDataByIdentifier (Service 0x2E)  --  [ECU ID: 0x7E1 (TCM)]\par
+     DataIdentifier:  0xFD70     Data Size: 10 byte(s)\par
+     Data (Hex): 00 01 02 03 04 05 06 07 08 09 \par
+\cf3 Positive Response to WriteDataByIdentifier (Service 0x2E)  --  [ECU ID: 0x7E9 (TCM)]\par
+     DataIdentifier:  0xFD70\par
+\cf2 Request for WriteDataByIdentifier (Service 0x2E)  --  [ECU ID: 0x7E1 (TCM)]\par
+     DataIdentifier:  0xFD72     Data Size: 1 byte(s)\par
+     Data (Hex): 01 \par
+\cf3 Positive Response to WriteDataByIdentifier (Service 0x2E)  --  [ECU ID: 0x7E9 (TCM)]\par
+     DataIdentifier:  0xFD72\par
+\cf2 Request for WriteDataByIdentifier (Service 0x2E)  --  [ECU ID: 0x7E1 (TCM)]\par
+     DataIdentifier:  0xFD73     Data Size: 1 byte(s)\par
+     Data (Hex): 0A \par
+\cf3 Positive Response to WriteDataByIdentifier (Service 0x2E)  --  [ECU ID: 0x7E9 (TCM)]\par
+     DataIdentifier:  0xFD73\par
+\cf2 Request for WriteDataByIdentifier (Service 0x2E)  --  [ECU ID: 0x7E1 (TCM)]\par
+     DataIdentifier:  0xFD74     Data Size: 1 byte(s)\par
+     Data (Hex): 00 \par
+\cf3 Positive Response to WriteDataByIdentifier (Service 0x2E)  --  [ECU ID: 0x7E9 (TCM)]\par
+     DataIdentifier:  0xFD74\par
+\cf2 Request for WriteDataByIdentifier (Service 0x2E)  --  [ECU ID: 0x7E1 (TCM)]\par
+     DataIdentifier:  0xFD71     Data Size: 1 byte(s)\par
+     Data (Hex): 01 \par
+\cf3 Positive Response to WriteDataByIdentifier (Service 0x2E)  --  [ECU ID: 0x7E9 (TCM)]\par
+     DataIdentifier:  0xFD71\par
+\cf2 Request for SecurityAccess (Service 0x27)  --  [ECU ID: 0x7E1 (TCM)]\par
+     Seed Request for Security Level: 0x11 [SPRMIB = False]\par
+\cf3 Positive Response to SecurityAccess (Service 0x27)  --  [ECU ID: 0x7E9 (TCM)]\par
+     Seed Request for Security Level: 0x11 [SPRMIB = False]\par
+     Seed (Hex): C6 FF 8D \par
+\cf2 Request for SecurityAccess (Service 0x27)  --  [ECU ID: 0x7E1 (TCM)]\par
+     Key Submittal for Security Level: 0x11 [SPRMIB = False]\par
+     Key (Hex): 66 8C 6B \par
+\cf3 Positive Response to SecurityAccess (Service 0x27)  --  [ECU ID: 0x7E9 (TCM)]\par
+     Key Submittal for Security Level: 0x11 [SPRMIB = False]\par
+\cf2 Request for RoutineControl (Service 0x31)  --  [ECU ID: 0x7E1 (TCM)]\par
+     SubFunction: 0x01 (startRoutine)  [SPRMIB = False]\par
+     RoutineIdentifier:  0x7003\par
+     Data Size: 4 byte(s)\par
+     Data (Hex): F6 0A 39 5A \par
+\cf3 Positive Response to RoutineControl (Service 0x31)  --  [ECU ID: 0x7E9 (TCM)]\par
+     SubFunction: 0x01 (startRoutine)  [SPRMIB = False]\par
+     RoutineIdentifier:  0x7003\par
+     RoutineType:  1\par
+     RoutineStatus:  0 (Routine Completed ALL Functionality)\par
+     Data Size: 1 byte(s)\par
+     Data (Hex): 00 \par
+     Routine Name: Learn Anti-theft Outcode and Incode\par
+\cf2 Request for ClearDiagnosticInformation (Service 0x14)  --  [ECU ID: 0x7E1 (TCM)]\par
+     GroupOfDTC = 0xFFFFFF (All DTCs)\par
+\cf3 Positive Response to ClearDiagnosticInformation (Service 0x14)  --  [ECU ID: 0x7E9 (TCM)]\par
+     No Additional Information\par
+\cf2 Request for ReadDTCInformation (Service 0x19)  --  [ECU ID: 0x7E1 (TCM)]\par
+     SubFunction: 0x02 (reportDTCByStatusMask)  [SPRMIB = False]\par
+     DTCStatusMask: 0x08\par
+\cf3 Positive Response to ReadDTCInformation (Service 0x19)  --  [ECU ID: 0x7E9 (TCM)]\par
+     SubFunction: 0x02 - reportDTCByStatusMask\par
+     DTCStatusAvailabilityMask: 0xCB\par
+     Number of Returned DTCs: 1\par
+     DTC #1: 0xC10000 (U0100-00)  [Lost Communication With ECM/PCM "A"]\par
+          Status: 0x8B\par
+               Bit 7 - warningIndicatorRequested: 1\par
+               Bit 6 - testNotCompletedThisOperationCycle: 0\par
+               Bit 3 - confirmedDTC: 1\par
+               Bit 1 - testFailedThisOperationCycle: 1\par
+               Bit 0 - testFailed: 1\par
+\cf2 Request for DiagnosticSessionControl (Service 0x10)  --  [ECU ID: 0x7E1 (TCM)]\par
+     Session: 0x02 (programmingSession)  [SPRMIB = False]\par
+\cf3 Positive Response to DiagnosticSessionControl (Service 0x10)  --  [ECU ID: 0x7E9 (TCM)]\par
+     Session: 0x02 (programmingSession)     P2can:  25ms      P2*can: 5000ms\par
+\cf2 Request for SecurityAccess (Service 0x27)  --  [ECU ID: 0x7E1 (TCM)]\par
+     Seed Request for Security Level: 0x01 [SPRMIB = False]\par
+\cf3 Positive Response to SecurityAccess (Service 0x27)  --  [ECU ID: 0x7E9 (TCM)]\par
+     Seed Request for Security Level: 0x01 [SPRMIB = False]\par
+     Seed (Hex): B4 40 22 \par
+\cf2 Request for SecurityAccess (Service 0x27)  --  [ECU ID: 0x7E1 (TCM)]\par
+     Key Submittal for Security Level: 0x01 [SPRMIB = False]\par
+     Key (Hex): 2A FF 5C \par
+\cf3 Positive Response to SecurityAccess (Service 0x27)  --  [ECU ID: 0x7E9 (TCM)]\par
+     Key Submittal for Security Level: 0x01 [SPRMIB = False]\par
+\cf2 Request for WriteDataByIdentifier (Service 0x2E)  --  [ECU ID: 0x7E1 (TCM)]\par
+     DataIdentifier:  0xF111     Data Size: 24 byte(s)\par
+     Data (Hex): 45 56 36 38 2D 31 34 46 30 38 35 2D 41 42 00 00 00 00 00 00 00 00 00 00 \par
+          [0xF111] ECU Core Assembly Number (GDX): EV68-14F085-AB\par
+\cf3 Positive Response to WriteDataByIdentifier (Service 0x2E)  --  [ECU ID: 0x7E9 (TCM)]\par
+     DataIdentifier:  0xF111\par
+\cf2 Request for WriteDataByIdentifier (Service 0x2E)  --  [ECU ID: 0x7E1 (TCM)]\par
+     DataIdentifier:  0xF113     Data Size: 24 byte(s)\par
+     Data (Hex): 46 56 36 38 2D 37 5A 33 36 39 2D 41 44 00 00 00 00 00 00 00 00 00 00 00 \par
+          [0xF113] ECU Delivery Assembly Number (GDX): FV68-7Z369-AD\par
+\cf3 Positive Response to WriteDataByIdentifier (Service 0x2E)  --  [ECU ID: 0x7E9 (TCM)]\par
+     DataIdentifier:  0xF113\par
+\cf2 Request for WriteDataByIdentifier (Service 0x2E)  --  [ECU ID: 0x7E1 (TCM)]\par
+     DataIdentifier:  0xF18C     Data Size: 16 byte(s)\par
+     Data (Hex): 37 47 41 33 37 30 33 34 32 41 37 37 32 34 00 00 \par
+          [0xF18C] ECU Serial Number (GDX): 7GA370342A7724\par
+\cf3 Positive Response to WriteDataByIdentifier (Service 0x2E)  --  [ECU ID: 0x7E9 (TCM)]\par
+     DataIdentifier:  0xF18C\par
+\cf2 Request for ReadDataByIdentifier (Service 0x22)  --  [ECU ID: 0x7E1 (TCM)] - Single DID\par
+     DataIdentifier:  0xC1A1\par
+\cf3 Positive Response to ReadDataByIdentifier (Service 0x22)  --  [ECU ID: 0x7E9 (TCM)]\par
+     DataIdentifier:  0xC1A1     Data Size: 7 byte(s)\par
+     Data (Hex): 01 02 B2 1E C4 00 00 \par
+          [0xC1A1] PATS Outcode (GDX):    ---   (Packeted DID)\par
+          Request Immo Outcode: Outcode Valid\par
+          Algorithm Number: 2 \par
+          Encrypted Data: B2 1E C4 00 00\par
+\cf2 Request for ReadDataByIdentifier (Service 0x22)  --  [ECU ID: 0x7E1 (TCM)] - Single DID\par
+     DataIdentifier:  0xF18C\par
+\cf3 Positive Response to ReadDataByIdentifier (Service 0x22)  --  [ECU ID: 0x7E9 (TCM)]\par
+     DataIdentifier:  0xF18C     Data Size: 16 byte(s)\par
+     Data (Hex): 37 47 41 33 37 30 33 34 32 41 37 37 32 34 00 00 \par
+          [0xF18C] ECU Serial Number (GDX): 7GA370342A7724\par
+\cf2 Request for ReadDataByIdentifier (Service 0x22)  --  [ECU ID: 0x7E1 (TCM)] - Single DID\par
+     DataIdentifier:  0x487D\par
+\cf3 Positive Response to ReadDataByIdentifier (Service 0x22)  --  [ECU ID: 0x7E9 (TCM)]\par
+     DataIdentifier:  0x487D     Data Size: 2 byte(s)\par
+     Data (Hex): 05 6D \par
+          [0x487D] Drive Motor "A" Position Sensor Offset Value (GDX): 4.5715625 Radian\par
+\cf0\f1\par
+}
+ 
