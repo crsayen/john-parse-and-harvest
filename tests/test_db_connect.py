@@ -5,7 +5,6 @@ from util.db_connect import connect_to_db, read_table
 import config.batterylab
 
 
-@pytest.mark.skip
 def test_read_from_batt_db():
     # server = 'dt-sql03'
 
@@ -31,7 +30,6 @@ def test_read_from_batt_db():
         assert col in cols
 
 
-@pytest.mark.skip
 def test_read_from_batt_db_merlin():
     # server = 'dt-sql03'
     config.batterylab.server = "JOHNLAPTOP\SQLEXPRESS"

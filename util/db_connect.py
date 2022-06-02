@@ -1,6 +1,6 @@
 import pandas as pd
 
-# import pyodbc
+import pyodbc
 
 
 def read_table(table, connection, datefield="DateTimeStamp"):
